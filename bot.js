@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const config = require('./config.json');
 
 var QuoteOfTheDay;
 var QuoteOfTheDayExpiry = 0;
@@ -200,11 +201,11 @@ client.on('message', message => {
     message.channel.send("Well... vicr123 tried to code this... but it kept crashing... Ironic isn't it? :(").then(messageDeleteTimer);
   } else if (message.content === '!help') {
     message.channel.send("Available commands:\n```\n" +
-      "!ping, !pong     Requests AstralQuote to reply with a message\n" +
-      "!quoteoftheday   Requests AstralQuote for the quote of the day\n" +
-      "!forcequote      Requests AstralQuote to reset the quote of the day\n" +
-      "!reboot          Requests AstralQuote to reboot\n" +
-      "!poweroff        Tells AstralQuote to leave\n```"
+      "!ping, !pong     Requests AstrelQuact to reply with a message\n" +
+      "!quoteoftheday   Requests AstrelQuact for the quote of the day\n" +
+      "!forcequote      Requests AstrelQuact to reset the quote of the day\n" +
+      "!reboot          Requests AstrelQuact to reboot\n" +
+      "!poweroff        Tells AstrelQuact to leave\n```"
     ).then(messageDeleteTimer20s);
   } else if (message.content === '!easteregg') {
     message.channel.send("```cpp\n" +
@@ -238,7 +239,7 @@ client.on('message', message => {
           msg = "What are you trying to do!?";
           break;
         case 5:
-          msg = "Is this the end of AstralQuote?";
+          msg = "Is this the end of AstrelQuact?";
           break;
         case 6:
           msg = "Not sure what you mean.";
@@ -263,7 +264,7 @@ client.on('guildMemberAdd', usr => {
   usr.sendEmbed(embed)
 });
 
-client.login('MjgwMjQ1MDAwMDI0MDk2NzY4.C4K8Nw.InlnQvRmbvfJG0nv13FXtoVzXwc').catch(
+client.login(config.token).catch(
   function() {
     console.log("[ERROR] Login failed.");
   });
