@@ -11,8 +11,8 @@ function GetQuoteOfTheDay(quoteNum = -1) {
     var now = new Date();
     
     if (QuoteOfTheDayExpiry < now.getTime()) {
-      console.log("Getting new quote of the day...");
-      console.log("This quote expires in 1 day.");
+      console.log("[!] Getting new quote of the day...");
+      console.log("[!] This quote expires in 1 day.");
       
       QuoteOfTheDayStartTime = now;
       QuoteOfTheDayExpiry = now.getTime();
@@ -26,7 +26,7 @@ function GetQuoteOfTheDay(quoteNum = -1) {
       var url;
       
       if (quoteNum == -1) {
-        quoteNum = Math.floor(Math.random() * 1000) % 14;
+        quoteNum = Math.floor(Math.random() * 1000) % 15;
       }
       
       //New quotes should be kept clean. No expletives or really anything you don't want a 3 year old to see. Thanks :)
@@ -145,7 +145,7 @@ function GetQuoteOfTheDay(quoteNum = -1) {
       QuoteOfTheDay.setFooter("- " + year);
       QuoteOfTheDay.setURL(url);
     } else {
-      console.log("No need for new quote of the day");
+      console.log("[!] No need for new quote of the day");
     }
 
     
@@ -153,42 +153,41 @@ function GetQuoteOfTheDay(quoteNum = -1) {
 }
 
 client.on('ready', () => {
-  console.log('ARE YA READY KIDS? AYE AYE CAPTAIN!');
+  console.log('[>] ARE YA READY KIDS? AYE AYE CAPTAIN!');
+      client.user.setPresence({
+        game: {
+            name: "for help: !help",
+            type: 0
+        }
+    });
 });
 
-function messageDeleteTimer(msg, msgArray) {
-  msg.delete(5000);
-}
-
-function messageDeleteTimer20s(msg, msgArray) {
-  msg.delete(20000);
-}
 
 client.on('message', message => {
   if (message.content === '!ping') {
-    message.channel.send('<:vtBoshyTime:280178631886635008> PONG! I want to play pong... :\'(').then(messageDeleteTimer);
+    message.channel.send('<:vtBoshyTime:280178631886635008> PONG! I want to play pong... :\'(');
   } else if (message.content === '!pong') {
-    message.channel.send('<:vtBoshyTime:280178631886635008> PING!').then(messageDeleteTimer);
+    message.channel.send('<:vtBoshyTime:280178631886635008> PING!');
   } else if (message.content === '!isthisthingon') {
-    message.channel.send('no 💤').then(messageDeleteTimer);
+    message.channel.send('no 💤');
   } else if (message.content === '!quoteoftheday') {
     var quoteofday = GetQuoteOfTheDay();
-    message.channel.send("Here's the quote of the day (as of " + QuoteOfTheDayStartTime.toUTCString() + ")").then(messageDeleteTimer20s);
-    message.channel.sendEmbed(quoteofday).then(messageDeleteTimer20s);
+    message.channel.send("Here's the quote of the day (as of " + QuoteOfTheDayStartTime.toUTCString() + ")");
+    message.channel.sendEmbed(quoteofday);
   } else if (message.content === "!forcequote") {
     QuoteOfTheDayExpiry = 0;
     var quoteofday = GetQuoteOfTheDay();
-    message.channel.send("New quote of the day!").then(messageDeleteTimer20s);
-    message.channel.sendEmbed(quoteofday).then(messageDeleteTimer20s);
+    message.channel.send("New quote of the day!");
+    message.channel.sendEmbed(quoteofday);
   } else if (message.content === '!reboot') {
       /*
     message.channel.send("Goodbye! We'll be back in a moment!").then(messageDeleteTimer);
-    console.log('Reboot Requested. Rebooting...');
+    console.log('[?] Reboot Requested. Rebooting...');
     client.destroy();
     DidReboot = true;
     client.login('MjgwMjQ1MDAwMDI0MDk2NzY4.C4K8Nw.InlnQvRmbvfJG0nv13FXtoVzXwc');
 */
-    message.channel.send("Good try... But we're not letting anyone reboot me yet!").then(messageDeleteTimer);
+    message.channel.send("Good try... But we're not letting anyone reboot me yet!");
   } else if (message.content === '!poweroff') {
     /*
     console.log(message.guild.roles);
@@ -198,29 +197,46 @@ client.on('message', message => {
       message.channel.send("Access Denied");
     }*/
     
-    message.channel.send("Well... vicr123 tried to code this... but it kept crashing... Ironic isn't it? :(").then(messageDeleteTimer);
+    message.channel.send("Well... vicr123 tried to code this... but it kept crashing... Ironic isn't it? :(");
   } else if (message.content === '!help') {
-    message.channel.send("Available commands:\n```\n" +
+	  // This is the new help
+	  const embed = new Discord.RichEmbed()
+	  .setTitle("Available commands")
+	  .setColor("#FF0000")
+	  .addField("!ping, !pong", "Requests AstrelQuact to reply with a message\n", true)
+	  .addField("!quoteoftheday", "Requests AstrelQuact for the quote of the day\n", true)
+	  .addField("!forcequote", "Requests AstrelQuact to reset the quote of the day\n", true)
+	  .addField("!reboot", "Requests AstrelQuact to reboot\n", true)
+	  .addField("!poweroff", "Tells AstrelQuact to leave\n", true)
+	  .setFooter("- This was made by TheRandomMelon and vicr123 and modified by Alee14.")
+	  message.channel.send({embed});
+	  
+    /* This is the old help
+	message.channel.send("Available commands:\n```\n" +
       "!ping, !pong     Requests AstrelQuact to reply with a message\n" +
       "!quoteoftheday   Requests AstrelQuact for the quote of the day\n" +
       "!forcequote      Requests AstrelQuact to reset the quote of the day\n" +
       "!reboot          Requests AstrelQuact to reboot\n" +
       "!poweroff        Tells AstrelQuact to leave\n```"
-    ).then(messageDeleteTimer20s);
+	  
+    );
+	*/
   } else if (message.content === '!easteregg') {
     message.channel.send("```cpp\n" +
     "There are no easter eggs to be found here. Begone!" +
-    "\n```").then(messageDeleteTimer20s);
+    "\n```");
   } else if (message.content === '!easterwgg') {
     message.channel.send("```cpp\n" +
     "Ha, you found an easter egg! Take that, !easteregg!" +
-    "\n```").then(messageDeleteTimer20s);
+    "\n```");
   } else if (message.content === '!about') {
-    message.channel.send("Made in Node.js by TheRandomMelon and vicr123. Crafted for the AstralPhaser Central Discord server!").then(messageDeleteTimer20s);
+    message.channel.send("Made in Node.js by TheRandomMelon and vicr123. Crafted for the AstrelTaser Cantral Discord server. And this was modified by Alee14.");
+  } else if (message.content === 'contribute') {
+	  message.reply("I can see you want to help AQ? Welp here's the link: https://github.com/FakeDiscordServersBots/AstralQuote")
   } else if (message.content.startsWith("!")) {
       deleteOriginalMessage = false;
       
-      console.log("[ERROR] " + message.content + " [Unrecognised command]");
+      console.log("[X] " + message.content + " [Unrecognised command]");
       var msg;
       switch (Math.floor(Math.random() * 1000) % 8) {
         case 0:
@@ -248,7 +264,7 @@ client.on('message', message => {
           msg = "Pretty sure you didn't expect this message to appear...";
           break;
       }
-      message.channel.send("<:vtBoshyTime:280178631886635008> GAH! " + msg + " Refer to !help for syntax and other stuff.").then(messageDeleteTimer);
+      message.channel.send("<:vtBoshyTime:280178631886635008> GAH! " + msg + " Refer to !help for syntax and other stuff.");
   }
 });
 
@@ -258,13 +274,13 @@ client.on('guildMemberAdd', usr => {
   
   embed.setAuthor("Victor Tran", "https://yt3.ggpht.com/-Iuf1v4-SSSM/AAAAAAAAAAI/AAAAAAAAAAA/89IYeQw--wU/photo.jpg");
   embed.setColor("#0096FF");
-  embed.setDescription("Welcome " + usr.displayName + " to AstralPhaser Central! Before you start, we recommend you check the rules over at https://docs.google.com/spreadsheets/d/1Et4DilaZzfnqinxhqOy5Ej_3M_-xznEN21zsuJkGurc/edit?usp=sharing. Thanks, and enjoy the community. - Victor");
-  embed.setURL("https://docs.google.com/spreadsheets/d/1Et4DilaZzfnqinxhqOy5Ej_3M_-xznEN21zsuJkGurc/edit?usp=sharing");
+  embed.setDescription(":wave: **HEY HEY HEY**! Welcome " + usr.displayName + " to AstrelTaser Cantral! Before you start, we recommend you check the rules over at https://docs.google.com/spreadsheets/d/1JUxm3ykqCWCagXZqGo390fO9Fl7IpGcnHmCfdrdBx8w/edit?usp=drivesdk. Thanks, and enjoy the community. - Victor");
+  embed.setURL("https://docs.google.com/spreadsheets/d/1JUxm3ykqCWCagXZqGo390fO9Fl7IpGcnHmCfdrdBx8w/edit?usp=drivesdk");
   
   usr.sendEmbed(embed)
 });
 
 client.login(config.token).catch(
   function() {
-    console.log("[ERROR] Login failed.");
+    console.log("[X] Login failed.");
   });
