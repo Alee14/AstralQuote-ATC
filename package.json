@@ -1,0 +1,23 @@
+{
+  "name": "astralquote",
+  "version": "1.0.0",
+  "description": "Wanna quote something in AstralPhaser Central? Well, this bot powers it!",
+  "main": "bot.js",
+  "dependencies": {
+    "discord.js": "^11.2.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FakeDiscordServersBots/AstralQuote.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FakeDiscordServersBots/AstralQuote/issues"
+  },
+  "homepage": "https://github.com/FakeDiscordServersBots/AstralQuote#readme"
+}
