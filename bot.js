@@ -29,8 +29,6 @@ function GetQuoteOfTheDay(quoteNum = -1) {
         quoteNum = Math.floor(Math.random() * 1000) % 18;
       }
       
-      //New quotes should be kept clean. No expletives or really anything you don't want a 3 year old to see. Thanks :)
-      // - Victor
       
       switch (quoteNum) {
         case 0:
