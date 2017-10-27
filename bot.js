@@ -26,7 +26,7 @@ function GetQuoteOfTheDay(quoteNum = -1) {
       var url;
       
       if (quoteNum == -1) {
-        quoteNum = Math.floor(Math.random() * 1000) % 16;
+        quoteNum = Math.floor(Math.random() * 1000) % 18;
       }
       
       //New quotes should be kept clean. No expletives or really anything you don't want a 3 year old to see. Thanks :)
@@ -143,6 +143,22 @@ function GetQuoteOfTheDay(quoteNum = -1) {
 		  quote = "@Derpy ♀ For your own fucking good, learn what political correctness is.";
 		  year = "2017";
 		  url = "https://cdn.discordapp.com/attachments/371830028381454337/372263065472729088/2017-10-24_01.58.19.png"
+		  break;
+		case 16:
+		  author = "Victor Tran";
+		  authorImage = "https://yt3.ggpht.com/-Iuf1v4-SSSM/AAAAAAAAAAI/AAAAAAAAAAA/89IYeQw--wU/photo.jpg";
+		  quote = "But couldn't you at least put the mounted disks on the dick or on Dinder?\nDOCK";
+		  year = "2017";
+		  url = "https://www.example.com"; // TODO: Find a URL
+		  break;
+		case 17:
+		  author = "Victor Tran";
+		  authorImage = "https://yt3.ggpht.com/-Iuf1v4-SSSM/AAAAAAAAAAI/AAAAAAAAAAA/89IYeQw--wU/photo.jpg";
+		  quote = "Just happened one gay?\nDAY\nOH BOY\nI BLAME SWIPE TYPING";
+		  year = "2017";
+		  url = "https://www.example.com"; // TODO: Find a URL
+		  break;
+		  
       }
       
       QuoteOfTheDay.setAuthor(author, authorImage);
