@@ -26,7 +26,7 @@ function GetQuoteOfTheDay(quoteNum = -1) {
       var url;
       
       if (quoteNum == -1) {
-        quoteNum = Math.floor(Math.random() * 1000) % 19;
+        quoteNum = Math.floor(Math.random() * 1000) % 20;
       }
       
       
@@ -162,6 +162,13 @@ function GetQuoteOfTheDay(quoteNum = -1) {
 		  quote = "IS THERE A GOOOOOGALIE HERE!!!! (Go to 2:30 into the video)"
 		  year = "2014";
 		  url = "https://youtu.be/Ap6fUlMx90A";
+		case 19:
+		  author = "143malliw";
+          authorImage = "https://yt3.ggpht.com/-SUPNlJ8a7qA/AAAAAAAAAAI/AAAAAAAAAAA/R_I4z7057_w/s100-c-k-no-mo-rj-c0xffffff/photo.jpg";
+          quote = "but i can't write a quote, for I am the quote";
+          year = "2017";
+          url = "https://www.example.com/"; // TODO: Find a URL
+          break;
       }
       
       QuoteOfTheDay.setAuthor(author, authorImage);
