@@ -156,7 +156,12 @@ function GetQuoteOfTheDay(quoteNum = -1) {
 		  year = "2017";
 		  url = "https://www.example.com"; // TODO: Find a URL
 		  break;
-		  
+		case 18:
+		  author = "Alee14";
+		  authorImage = "https://cdn.discordapp.com/avatars/242775871059001344/cbc9d248dc3ce8782153b03a3ba0c121.png?size=2048";
+		  quote = "IS THERE A GOOOOOGALIE HERE!!!! (Go to 2:30 into the video)"
+		  year = "2014";
+		  url = "https://youtu.be/Ap6fUlMx90A";
       }
       
       QuoteOfTheDay.setAuthor(author, authorImage);
