@@ -323,7 +323,7 @@ client.on('message', message => {
 
 
 client.on('guildCreate', guild => {
-	console.log(`[>] I just joined ${guild.name}. This server have ${guild.memberCount} members.`)
+	console.log(`[>] I just joined ${guild.name}. This server has ${guild.memberCount} members.`)
 
 });
 
