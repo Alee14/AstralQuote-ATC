@@ -117,7 +117,7 @@ function GetQuoteOfTheDay(quoteNum = -1) {
                 break;
             case 12: //Special Case
                 QuoteOfTheDay.setAuthor("William Shakespeare", "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Shakespeare.jpg/468px-Shakespeare.jpg");
-                QuoteOfTheDay.setColor("#FF0000");
+                QuoteOfTheDay.setColor("#BF6FDB");
                 QuoteOfTheDay.setURL("https://i.imgur.com/4KfdylP.jpg");
                 QuoteOfTheDay.setImage("https://i.imgur.com/4KfdylP.jpg");
                 return QuoteOfTheDay;
@@ -172,7 +172,7 @@ function GetQuoteOfTheDay(quoteNum = -1) {
         }
 
         QuoteOfTheDay.setAuthor(author, authorImage);
-        QuoteOfTheDay.setColor("#FF0000");
+        QuoteOfTheDay.setColor("#BF6FDB");
         QuoteOfTheDay.setDescription(quote);
         QuoteOfTheDay.setFooter("- " + year);
         QuoteOfTheDay.setURL(url);
@@ -236,7 +236,7 @@ client.on('message', message => {
             .setTitle("AstrelQuact Commands")
             .setDescription('Every command that you input in this bot you must use the following prefix `!`.')
             .setThumbnail('https://cdn.discordapp.com/avatars/373224323529310208/10311b6f6bb439681480b0ced7efaf66.png?size=2048')
-            .setColor("#FF0000")
+            .setColor("#BF6FDB")
             .addField("- General Commands", "ping\npong\ninvitebot\ncontribute\nreboot\npoweroff", true)
             .addField("- Quote Commands", "quoteoftheday\nforcequote", true)
             .setFooter("AstrelQuact Copyright 2017. This was made by TheRandomMelon and vicr123 and modified by Alee14.")
