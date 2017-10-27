@@ -239,7 +239,7 @@ client.on('message', message => {
     message.channel.send("Made in Node.js by TheRandomMelon and vicr123. Crafted for the AstrelTaser Cantral Discord server. And this was modified by Alee14.");
   } else if (message.content === 'contribute') {
 	  message.reply("I can see you want to help AQ? Welp here's the link: https://github.com/FakeDiscordServersBots/AstralQuote");
-  } else if (message.content === 'uptime') {
+  } else if (message.content === '!uptime') {
 	                   var timeString; // What we'll eventually put into the message
                     var uptime = parseInt(client.uptime); // Get uptime in ms
                     uptime = Math.floor(uptime / 1000); // Convert from ms to s
