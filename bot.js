@@ -290,8 +290,8 @@ client.on('message', message => {
 
         embed.setAuthor("AstrelQuact", "https://cdn.discordapp.com/avatars/373224323529310208/10311b6f6bb439681480b0ced7efaf66.png?size=2048");
         embed.setColor("#BF6FDB");
-        embed.setDescription("Ooh! I can see you want to invite me to a server! Here's the link: https://discordapp.com/oauth2/authorize?client_id=373224323529310208&scope=bot&permissions=0");
-        embed.setURL("https://discordapp.com/oauth2/authorize?client_id=373224323529310208&scope=bot&permissions=0");
+        embed.setDescription("Ooh! I can see you want to invite me to a server! Here's the link: https://discordapp.com/oauth2/authorize?client_id=373224323529310208&scope=bot&permissions=314368");
+        embed.setURL("https://discordapp.com/oauth2/authorize?client_id=373224323529310208&scope=bot&permissions=314368");
 
         message.channel.send(embed)
     } else if (message.content.startsWith("!")) {
