@@ -26,7 +26,7 @@ function GetQuoteOfTheDay(quoteNum = -1) {
       var url;
       
       if (quoteNum == -1) {
-        quoteNum = Math.floor(Math.random() * 1000) % 15;
+        quoteNum = Math.floor(Math.random() * 1000) % 16;
       }
       
       //New quotes should be kept clean. No expletives or really anything you don't want a 3 year old to see. Thanks :)
@@ -137,6 +137,12 @@ function GetQuoteOfTheDay(quoteNum = -1) {
           year = "2017";
           url = "https://www.example.com/"; // TODO: Find a URL
           break;
+		case 15:
+		  author = "Victor Tran";
+		  authorImage = "https://yt3.ggpht.com/-Iuf1v4-SSSM/AAAAAAAAAAI/AAAAAAAAAAA/89IYeQw--wU/photo.jpg";
+		  quote = "@Derpy ♀ For your own fucking good, learn what political correctness is.";
+		  year = "2017";
+		  url = "https://cdn.discordapp.com/attachments/371830028381454337/372263065472729088/2017-10-24_01.58.19.png"
       }
       
       QuoteOfTheDay.setAuthor(author, authorImage);
@@ -232,7 +238,27 @@ client.on('message', message => {
   } else if (message.content === '!about') {
     message.channel.send("Made in Node.js by TheRandomMelon and vicr123. Crafted for the AstrelTaser Cantral Discord server. And this was modified by Alee14.");
   } else if (message.content === 'contribute') {
-	  message.reply("I can see you want to help AQ? Welp here's the link: https://github.com/FakeDiscordServersBots/AstralQuote")
+	  message.reply("I can see you want to help AQ? Welp here's the link: https://github.com/FakeDiscordServersBots/AstralQuote");
+  } else if (message.content === 'uptime') {
+	                   var timeString; // What we'll eventually put into the message
+                    var uptime = parseInt(client.uptime); // Get uptime in ms
+                    uptime = Math.floor(uptime / 1000); // Convert from ms to s
+                    var uptimeMinutes = Math.floor(uptime / 60); // Get the uptime in minutes
+                    var minutes = uptime % 60;
+                    var hours = 0;
+
+                    while (uptimeMinutes >= 60) {
+                        hours++;
+                        uptimeMinutes = uptimeMinutes - 60;
+                    }
+
+                    if (uptimeMinutes < 10) {
+                        timeString = hours + ":0" + uptimeMinutes // We need to add an additional 0 to the minutes
+                    } else {
+                        timeString = hours + ":" + uptimeMinutes // We don't need to add an extra 0.
+                    }
+
+                    message.reply(":clock1: AstrelQuact has been up for " + timeString + " hours.");
   } else if (message.content.startsWith("!")) {
       deleteOriginalMessage = false;
       
