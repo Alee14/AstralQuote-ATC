@@ -26,7 +26,7 @@ function GetQuoteOfTheDay(quoteNum = -1) {
       var url;
       
       if (quoteNum == -1) {
-        quoteNum = Math.floor(Math.random() * 1000) % 18;
+        quoteNum = Math.floor(Math.random() * 1000) % 19;
       }
       
       
