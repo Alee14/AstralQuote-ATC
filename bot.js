@@ -238,6 +238,7 @@ client.on('message', message => {
 	  .addField("!ping, !pong", "Requests AstrelQuact to reply with a message\n", true)
 	  .addField("!quoteoftheday", "Requests AstrelQuact for the quote of the day\n", true)
 	  .addField("!forcequote", "Requests AstrelQuact to reset the quote of the day\n", true)
+	  .addField("!invitebot", "Requests AstrelQuact to tell you the invite link\n", true)
 	  .addField("!reboot", "Requests AstrelQuact to reboot\n", true)
 	  .addField("!poweroff", "Tells AstrelQuact to leave\n", true)
 	  .setFooter("- This was made by TheRandomMelon and vicr123 and modified by Alee14.")
@@ -263,7 +264,7 @@ client.on('message', message => {
     "\n```");
   } else if (message.content === '!about') {
     message.channel.send("Made in Node.js by TheRandomMelon and vicr123. Crafted for the AstrelTaser Cantral Discord server. And this was modified by Alee14.");
-  } else if (message.content === 'contribute') {
+  } else if (message.content === '!contribute') {
 	  message.reply("I can see you want to help AQ? Welp here's the link: https://github.com/FakeDiscordServersBots/AstralQuote");
   } else if (message.content === '!uptime') {
 	                   var timeString; // What we'll eventually put into the message
@@ -286,6 +287,15 @@ client.on('message', message => {
 
                     message.reply(":clock1: AstrelQuact has been up for " + timeString + " hours.");
 					console.log("[!] Someone just typed in the uptime command! Here's how long i've been up for: " + timeString + " hours.")
+  } else if (message.content === '!invitebot') {
+	var embed = new Discord.RichEmbed();
+  
+	embed.setAuthor("AstrelQuact", "https://cdn.discordapp.com/avatars/373224323529310208/10311b6f6bb439681480b0ced7efaf66.png?size=2048");
+	embed.setColor("#BF6FDB");
+	embed.setDescription("Ooh! I can see you want to invite me to a server! Here's the link: https://discordapp.com/oauth2/authorize?client_id=373224323529310208&scope=bot&permissions=0");
+	embed.setURL("https://discordapp.com/oauth2/authorize?client_id=373224323529310208&scope=bot&permissions=0");
+  
+	message.channel.send(embed)
   } else if (message.content.startsWith("!")) {
       deleteOriginalMessage = false;
       
