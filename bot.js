@@ -237,7 +237,7 @@ client.on('message', message => {
             .setDescription('Every command that you input in this bot you must use the following prefix `!`.')
             .setThumbnail('https://cdn.discordapp.com/avatars/373224323529310208/10311b6f6bb439681480b0ced7efaf66.png?size=2048')
             .setColor("#FF0000")
-            .addField("- General Commands", "ping\npong\ninvitebot\nreboot\npoweroff", true)
+            .addField("- General Commands", "ping\npong\ninvitebot\ncontribute\nreboot\npoweroff", true)
             .addField("- Quote Commands", "quoteoftheday\nforcequote", true)
             .setFooter("AstrelQuact Copyright 2017. This was made by TheRandomMelon and vicr123 and modified by Alee14.")
         message.channel.send(embed);
