@@ -285,7 +285,7 @@ client.on('message', message => {
                     }
 
                     message.reply(":clock1: AstrelQuact has been up for " + timeString + " hours.");
-					console.log("[!] Someone just typed in the uptime command on me and here's how long i've been on for: "+ timeString)
+					console.log("[!] Someone just typed in the uptime command! Here's how long i've been up for: " + timeString + "hours.")
   } else if (message.content.startsWith("!")) {
       deleteOriginalMessage = false;
       
