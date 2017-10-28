@@ -328,9 +328,13 @@ client.on('message', message => {
 
         message.channel.send(embed)
     } else if (message.content === "!suggestaquote") {
+        var embed = new Discord.RichEmbed();
+
         embed.setAuthor("AstrelQuact", "https://cdn.discordapp.com/avatars/373224323529310208/10311b6f6bb439681480b0ced7efaf66.png?size=2048");
         embed.setColor("#BF6FDB");
         embed.setDescription("This feature is coming soon!");
+
+        message.channel.send(embed)
     } else if (message.content.startsWith("!")) {
         deleteOriginalMessage = false;
 
