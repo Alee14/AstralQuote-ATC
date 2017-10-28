@@ -274,7 +274,7 @@ client.on('message', message => {
             .setThumbnail('https://cdn.discordapp.com/avatars/373224323529310208/10311b6f6bb439681480b0ced7efaf66.png?size=2048')
             .setColor("#BF6FDB")
             .addField("- General Commands", "ping\npong\ninvitebot\ncontribute\nreboot\npoweroff", true)
-            .addField("- Quote Commands", "quoteoftheday\nforcequote", true)
+            .addField("- Quote Commands", "quoteoftheday\nforcequote\nsuggestaquote", true)
             .setFooter("AstrelQuact Copyright 2017. This was made by TheRandomMelon and vicr123 and modified by Alee14.")
         message.channel.send(embed);
     } else if (message.content === '!oldhelp') {
@@ -327,6 +327,10 @@ client.on('message', message => {
         embed.setURL("https://discordapp.com/oauth2/authorize?client_id=373224323529310208&scope=bot&permissions=314368");
 
         message.channel.send(embed)
+    } else if (message.content === "!suggestaquote") {
+        embed.setAuthor("AstrelQuact", "https://cdn.discordapp.com/avatars/373224323529310208/10311b6f6bb439681480b0ced7efaf66.png?size=2048");
+        embed.setColor("#BF6FDB");
+        embed.setDescription("This feature is coming soon!");
     } else if (message.content.startsWith("!")) {
         deleteOriginalMessage = false;
 
