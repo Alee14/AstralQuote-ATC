@@ -26,7 +26,7 @@ function GetQuoteOfTheDay(quoteNum = -1) {
         var url;
 
         if (quoteNum == -1) {
-            quoteNum = Math.floor(Math.random() * 1000) % 24;
+            quoteNum = Math.floor(Math.random() * 1000) % 25;
         }
 
 
@@ -192,11 +192,18 @@ function GetQuoteOfTheDay(quoteNum = -1) {
                 url = "https://media.discordapp.net/attachments/277922530973581312/355882401546764289/d300-123-6379-orton-wp.png";
                 break;
             case 23:
-                author = "Victor Tran"
-                authorImage = "https://yt3.ggpht.com/-Iuf1v4-SSSM/AAAAAAAAAAI/AAAAAAAAAAA/89IYeQw--wU/photo.jpg"
-                quote = ":joy:  It's Cameron's Birthday!\nJoy!!!11!!111!!!!"
-                year = "2017"
-                url = "https://www.example.com/" //TODO: Find a URL
+                author = "Victor Tran";
+                authorImage = "https://yt3.ggpht.com/-Iuf1v4-SSSM/AAAAAAAAAAI/AAAAAAAAAAA/89IYeQw--wU/photo.jpg";
+                quote = ":joy:  It's Cameron's Birthday!\nJoy!!!11!!111!!!!";
+                year = "2017";
+                url = "https://www.example.com/"; //TODO: Find a URL
+                break;
+            case 24:
+                author = "RogueAI";
+                authorImage = "https://cdn.discordapp.com/avatars/275867508932608000/1702545b94e23ea7dfc1346a83542792.png?size=2048";
+                quote = "1) java stinks and is a big stupid,";
+                year = "2017";
+                url = "https://www.example.com/"; //TODO: Find a URL
                 break;
         }
 
