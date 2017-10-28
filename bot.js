@@ -26,7 +26,7 @@ function GetQuoteOfTheDay(quoteNum = -1) {
         var url;
 
         if (quoteNum == -1) {
-            quoteNum = Math.floor(Math.random() * 1000) % 20;
+            quoteNum = Math.floor(Math.random() * 1000) % 24;
         }
 
 
@@ -159,7 +159,7 @@ function GetQuoteOfTheDay(quoteNum = -1) {
             case 18:
                 author = "Alee14";
                 authorImage = "https://cdn.discordapp.com/avatars/242775871059001344/cbc9d248dc3ce8782153b03a3ba0c121.png?size=2048";
-                quote = "IS THERE A GOOOOOGALIE HERE!!!! (Go to 2:30 into the video)"
+                quote = "IS THERE A GOOOOOGALIE HERE!!!! (Go to 2:30 into the video)";
                 year = "2014";
                 url = "https://youtu.be/Ap6fUlMx90A";
             case 19:
@@ -169,6 +169,28 @@ function GetQuoteOfTheDay(quoteNum = -1) {
                 year = "2017";
                 url = "https://www.example.com/"; // TODO: Find a URL
                 break;
+            case 20:
+                author = "How are you";
+                authorImage = "https://cdn.discordapp.com/avatars/355851198106173440/85032004f7aeeffa5a863e2aa54b6e9b.png?size=2048";
+                quote = "@Uranium Chloride a song i made for you :smiley: it everyday bro with that victor tron flow.. 100 in one year never done before got on the comptuon man osfirsttimer is next";
+                year = "2017";
+                url = "https://www.example.com/"; //TODO: Find a URL
+            case 21:
+                author = "AstralMod";
+                authorImage = "https://cdn.discordapp.com/avatars/282048599574052864/56d2d99bf763df5a05f5d157108edbdc.png?size=2048";
+                quote = "Welcome to the weekly chat chat!";
+                year = "2017";
+                url = "https://www.example.com/"; //TODO: Find a URL
+            case 22:
+                author = "AstralPhaser";
+                authorImage = "https://cdn.discordapp.com/avatars/230480971084988417/32f46a9671c6ceedc54b369ea73be178.png?size=2048";
+                quote = "Ok the shrimp is now on the barbie";
+                year = "2017";
+                url = "https://media.discordapp.net/attachments/277922530973581312/355882401546764289/d300-123-6379-orton-wp.png";
+            case 23:
+                author = "Victor Tran"
+                authorImage = "https://yt3.ggpht.com/-Iuf1v4-SSSM/AAAAAAAAAAI/AAAAAAAAAAA/89IYeQw--wU/photo.jpg"
+                quote = ":joy:  It's Cameron's Birthday!\nJoy!!!11!!111!!!!"
         }
 
         QuoteOfTheDay.setAuthor(author, authorImage);
