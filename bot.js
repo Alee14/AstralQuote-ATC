@@ -175,22 +175,28 @@ function GetQuoteOfTheDay(quoteNum = -1) {
                 quote = "@Uranium Chloride a song i made for you :smiley: it everyday bro with that victor tron flow.. 100 in one year never done before got on the comptuon man osfirsttimer is next";
                 year = "2017";
                 url = "https://www.example.com/"; //TODO: Find a URL
+                break;
             case 21:
                 author = "AstralMod";
                 authorImage = "https://cdn.discordapp.com/avatars/282048599574052864/56d2d99bf763df5a05f5d157108edbdc.png?size=2048";
                 quote = "Welcome to the weekly chat chat!";
                 year = "2017";
                 url = "https://www.example.com/"; //TODO: Find a URL
+                break;
             case 22:
                 author = "AstralPhaser";
                 authorImage = "https://cdn.discordapp.com/avatars/230480971084988417/32f46a9671c6ceedc54b369ea73be178.png?size=2048";
                 quote = "Ok the shrimp is now on the barbie";
                 year = "2017";
                 url = "https://media.discordapp.net/attachments/277922530973581312/355882401546764289/d300-123-6379-orton-wp.png";
+                break;
             case 23:
                 author = "Victor Tran"
                 authorImage = "https://yt3.ggpht.com/-Iuf1v4-SSSM/AAAAAAAAAAI/AAAAAAAAAAA/89IYeQw--wU/photo.jpg"
                 quote = ":joy:  It's Cameron's Birthday!\nJoy!!!11!!111!!!!"
+                year = "2017"
+                url = "https://www.example.com/" //TODO: Find a URL
+                break;
         }
 
         QuoteOfTheDay.setAuthor(author, authorImage);
