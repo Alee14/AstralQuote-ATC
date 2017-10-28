@@ -162,6 +162,7 @@ function GetQuoteOfTheDay(quoteNum = -1) {
                 quote = "IS THERE A GOOOOOGALIE HERE!!!! (Go to 2:30 into the video)";
                 year = "2014";
                 url = "https://youtu.be/Ap6fUlMx90A";
+                break;
             case 19:
                 author = "143malliw";
                 authorImage = "https://yt3.ggpht.com/-SUPNlJ8a7qA/AAAAAAAAAAI/AAAAAAAAAAA/R_I4z7057_w/s100-c-k-no-mo-rj-c0xffffff/photo.jpg";
