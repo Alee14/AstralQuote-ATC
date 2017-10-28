@@ -270,17 +270,14 @@ client.on('message', message => {
             .addField("- Quote Commands", "quoteoftheday\nforcequote", true)
             .setFooter("AstrelQuact Copyright 2017. This was made by TheRandomMelon and vicr123 and modified by Alee14.")
         message.channel.send(embed);
-
-        /* This is the old help
+    } else if (message.content === '!oldhelp') {
 	message.channel.send("Available commands:\n```\n" +
       "!ping, !pong     Requests AstrelQuact to reply with a message\n" +
       "!quoteoftheday   Requests AstrelQuact for the quote of the day\n" +
       "!forcequote      Requests AstrelQuact to reset the quote of the day\n" +
       "!reboot          Requests AstrelQuact to reboot\n" +
       "!poweroff        Tells AstrelQuact to leave\n```"
-
-    );
-	*/
+  );
     } else if (message.content === '!easteregg') {
         message.channel.send("```cpp\n" +
             "There are no easter eggs to be found here. Begone!" +
