@@ -42,7 +42,7 @@ function GetQuoteOfTheDay(quoteNum = -1) {
         var url;
 
         if (quoteNum == -1) {
-            quoteNum = Math.floor(Math.random() * 1000) % 27;
+            quoteNum = Math.floor(Math.random() * 1000) % 28;
         }
 
 
@@ -235,6 +235,13 @@ function GetQuoteOfTheDay(quoteNum = -1) {
                     year = "2017"
                     url = "https://www.example.com/" //TODO: Find a URL
                     break;
+                case 27:
+                    author = "FloppyDiskDrive";
+                    authorImage = "https://cdn.discordapp.com/avatars/228271067821506560/82edc6d24cc88b300260707e44f3442f.png?size=2048";
+                    quote = "Victor would be a champ at synchronized thinking."
+                    year = "2017"
+                    url = "https://www.example.com/" //TODO: Find a URL
+                    break;
         }
 
         QuoteOfTheDay.setAuthor(author, authorImage);
@@ -405,7 +412,7 @@ client.on('message', message => {
                 msg = "Pretty sure you didn't expect this message to appear...";
                 break;
         }
-        message.channel.send("<:vtBoshyTime:280178631886635008> GAH! " + msg + " Refer to !help for syntax and other stuff.");
+        message.channel.send("<:vtBoshyTime:280178631886635008> GAH! " + msg + " Refer to aq:help for syntax and other stuff.");
     }
 });
 
