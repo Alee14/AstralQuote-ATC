@@ -4,20 +4,20 @@ const config = require('./config.json');
 const aqVersion = "1.0.1";
 
 const SuggestQuoteStartMessage = "**Quote Suggestion**\n" +
-                                                                      "Welcome to the quote suggestion process! Please read this before you continue.\n" +
-                                                                      "Here's how this will work.\n\n" +
-                                                                      "- I'll walk you through the process of creating a suggestion on the suggestions channel.\n" +
-                                                                      "- Just respond to my prompts by typing a message in this DM and sending it.\n" +
-                                                                      "- At any time, simply respond with `q` to cancel the suggestion.\n\n" +
-                                                                      "However, please be aware of the following:\n" +
-                                                                      "- Your Discord Username will be recorded and sent along with the suggestion.\n" +
-                                                                      "- Your suggestion will be publicly visible.\n" +
-                                                                      "- Any misuse of this command, including (but not limited to) spam will lead to appropriate discipline from staff.\n\n" +
-                                                                      "**Here are some things not to suggest because they will be immediately declined.** This counts as misuse of the suggest command, so hit `q` now if you were going to suggest one of these.\n" +
-                                                                      "- New text/voice channels.\n" +
-                                                                      "- New bots.\n\n" +
-                                                                      "Wait 30 seconds, and then respond with `y` if you understood the above.\n" +
-                                                                      "Please note this feature doesn't work **yet**"
+    "Welcome to the quote suggestion process! Please read this before you continue.\n" +
+    "Here's how this will work.\n\n" +
+    "- I'll walk you through the process of creating a suggestion on the suggestions channel.\n" +
+    "- Just respond to my prompts by typing a message in this DM and sending it.\n" +
+    "- At any time, simply respond with `q` to cancel the suggestion.\n\n" +
+    "However, please be aware of the following:\n" +
+    "- Your Discord Username will be recorded and sent along with the suggestion.\n" +
+    "- Your suggestion will be publicly visible.\n" +
+    "- Any misuse of this command, including (but not limited to) spam will lead to appropriate discipline from staff.\n\n" +
+    "**Here are some things not to suggest because they will be immediately declined.** This counts as misuse of the suggest command, so hit `q` now if you were going to suggest one of these.\n" +
+    "- New text/voice channels.\n" +
+    "- New bots.\n\n" +
+    "Wait 30 seconds, and then respond with `y` if you understood the above.\n" +
+    "Please note this feature doesn't work **yet**"
 var QuoteOfTheDay;
 var QuoteOfTheDayExpiry = 0;
 var QuoteOfTheDayStartTime;
@@ -221,27 +221,27 @@ function GetQuoteOfTheDay(quoteNum = -1) {
                 year = "2017";
                 url = "https://www.example.com/"; //TODO: Find a URL
                 break;
-                case 25:
-                    author = "Steve Jobs";
-                    authorImage = "http://media.syracuse.com/news/photo/2011/01/9177328-large.jpg";
-                    quote = "It's really hard to design products by focus groups. A lot of times, people don't know what they want until you show it to them.";
-                    year = "1998";
-                    url = "https://www.huffingtonpost.com/gregory-ciotti/why-steve-jobs-didnt-list_b_5628355.html";
-                    break;
-                case 26:
-                    author = "arencllc";
-                    authorImage = "https://cdn.discordapp.com/avatars/191290329985581069/faf1a210c222d18fb30fcd9ec1082e7f.png?size=2048";
-                    quote = "Coding for uwp is as hard as using a UWP program."
-                    year = "2017"
-                    url = "https://www.example.com/" //TODO: Find a URL
-                    break;
-                case 27:
-                    author = "FloppyDiskDrive";
-                    authorImage = "https://cdn.discordapp.com/avatars/228271067821506560/82edc6d24cc88b300260707e44f3442f.png?size=2048";
-                    quote = "Victor would be a champ at synchronized thinking."
-                    year = "2017"
-                    url = "https://www.example.com/" //TODO: Find a URL
-                    break;
+            case 25:
+                author = "Steve Jobs";
+                authorImage = "http://media.syracuse.com/news/photo/2011/01/9177328-large.jpg";
+                quote = "It's really hard to design products by focus groups. A lot of times, people don't know what they want until you show it to them.";
+                year = "1998";
+                url = "https://www.huffingtonpost.com/gregory-ciotti/why-steve-jobs-didnt-list_b_5628355.html";
+                break;
+            case 26:
+                author = "arencllc";
+                authorImage = "https://cdn.discordapp.com/avatars/191290329985581069/faf1a210c222d18fb30fcd9ec1082e7f.png?size=2048";
+                quote = "Coding for uwp is as hard as using a UWP program."
+                year = "2017"
+                url = "https://www.example.com/" //TODO: Find a URL
+                break;
+            case 27:
+                author = "FloppyDiskDrive";
+                authorImage = "https://cdn.discordapp.com/avatars/228271067821506560/82edc6d24cc88b300260707e44f3442f.png?size=2048";
+                quote = "Victor would be a champ at synchronized thinking."
+                year = "2017"
+                url = "https://www.example.com/" //TODO: Find a URL
+                break;
         }
 
         QuoteOfTheDay.setAuthor(author, authorImage);
@@ -315,13 +315,13 @@ client.on('message', message => {
             .setFooter("AstrelQuact Copyright 2017. This was made by TheRandomMelon and vicr123 and modified by Alee14.")
         message.channel.send(embed);
     } else if (message.content === 'aq:oldhelp') {
-	message.channel.send("Available commands:\n```\n" +
-      "aq:ping, aq:pong     Requests AstrelQuact to reply with a message\n" +
-      "aq:quoteoftheday   Requests AstrelQuact for the quote of the day\n" +
-      "aq:forcequote      Requests AstrelQuact to reset the quote of the day\n" +
-      "aq:reboot          Requests AstrelQuact to reboot\n" +
-      "aq:poweroff        Tells AstrelQuact to leave\n```"
-  );
+        message.channel.send("Available commands:\n```\n" +
+            "aq:ping, aq:pong     Requests AstrelQuact to reply with a message\n" +
+            "aq:quoteoftheday   Requests AstrelQuact for the quote of the day\n" +
+            "aq:forcequote      Requests AstrelQuact to reset the quote of the day\n" +
+            "aq:reboot          Requests AstrelQuact to reboot\n" +
+            "aq:poweroff        Tells AstrelQuact to leave\n```"
+        );
     } else if (message.content === 'aq:easteregg') {
         message.channel.send("```cpp\n" +
             "There are no easter eggs to be found here. Begone!" +
@@ -373,7 +373,7 @@ client.on('message', message => {
 
         message.channel.send(embed)
         message.author.sendMessage(SuggestQuoteStartMessage);
-    } else if (message.content === "aq:information"){
+    } else if (message.content === "aq:information") {
         var embed = new Discord.RichEmbed();
 
         embed.setAuthor("AstrelQuact", "https://cdn.discordapp.com/avatars/373224323529310208/10311b6f6bb439681480b0ced7efaf66.png?size=2048");
