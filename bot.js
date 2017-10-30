@@ -42,7 +42,7 @@ function GetQuoteOfTheDay(quoteNum = -1) {
         var url;
 
         if (quoteNum == -1) {
-            quoteNum = Math.floor(Math.random() * 1000) % 30;
+            quoteNum = Math.floor(Math.random() * 1000) % 33;
         }
 
 
@@ -174,7 +174,7 @@ function GetQuoteOfTheDay(quoteNum = -1) {
                 break;
             case 18:
                 author = "Alee14";
-                authorImage = "https://cdn.discordapp.com/avatars/242775871059001344/cbc9d248dc3ce8782153b03a3ba0c121.png?size=2048";
+                authorImage = "https://cdn.discordapp.com/avatars/242775871059001344/dd7be36e859f206f9b6606855681280e.png?size=2048";
                 quote = "IS THERE A GOOOOOGALIE HERE!!!! (Go to 2:30 into the video)";
                 year = "2014";
                 url = "https://youtu.be/Ap6fUlMx90A";
@@ -231,31 +231,53 @@ function GetQuoteOfTheDay(quoteNum = -1) {
             case 26:
                 author = "arencllc";
                 authorImage = "https://cdn.discordapp.com/avatars/191290329985581069/faf1a210c222d18fb30fcd9ec1082e7f.png?size=2048";
-                quote = "Coding for uwp is as hard as using a UWP program."
-                year = "2017"
-                url = "https://www.example.com/" //TODO: Find a URL
+                quote = "Coding for uwp is as hard as using a UWP program.";
+                year = "2017";
+                url = "https://www.example.com/"; //TODO: Find a URL
                 break;
             case 27:
                 author = "FloppyDiskDrive";
                 authorImage = "https://cdn.discordapp.com/avatars/228271067821506560/82edc6d24cc88b300260707e44f3442f.png?size=2048";
-                quote = "Victor would be a champ at synchronized thinking."
+                quote = "Victor would be a champ at synchronized thinking.";
                 year = "2017"
-                url = "https://www.example.com/" //TODO: Find a URL
+                url = "https://www.example.com/"; //TODO: Find a URL
                 break;
             case 28:
                 author = "Tembot";
                 authorImage = "https://cdn.discordapp.com/avatars/361202413165608962/f334f0c4365164379311cebee300dd2a.png?size=2048";
-                quote = "Why are u stocking me"
-                year = "2017"
-                url = "https://www.example.com/" //TODO: Find a URL
+                quote = "Why are u stocking me";
+                year = "2017";
+                url = "https://www.example.com/"; //TODO: Find a URL
                 break;
             case 29:
                 author = "TheMemeKnight";
                 authorImage = "https://cdn.discordapp.com/avatars/267766634452615168/df08523e0ca30929ceb0dc28dcda8f78.png?size=2048";
-                quote = "@Alee14  Do YoU kNoW hOw It FeElS tO bE iN mY sOcKs"
-                year = "2017"
+                quote = "@Alee14  Do YoU kNoW hOw It FeElS tO bE iN mY sOcKs";
+                year = "2017";
+                url = "https://www.example.com/"; //TODO: Find a URL
+                break;
+            case 30:
+                author = "Alee14";
+                authorImage = "https://cdn.discordapp.com/avatars/242775871059001344/dd7be36e859f206f9b6606855681280e.png?size=2048";
+                quote = "By forcking it\nSpeaking of it\nI'm adding that as my new wuote :wink:\nOh\nanother one as well :wink:";
+                year = "2017";
+                url = "https://www.example.com/"; //TODO: Find a URL
+                break;
+            case 31:
+                author = "Alee14";
+                authorImage = "https://cdn.discordapp.com/avatars/242775871059001344/dd7be36e859f206f9b6606855681280e.png?size=2048"
+                quote = "I want to live in a bus when i'm older";
+                year = "2017";
                 url = "https://www.example.com/" //TODO: Find a URL
                 break;
+            case 32:
+                author = "Tembot";
+                authorImage = "https://cdn.discordapp.com/avatars/361202413165608962/f334f0c4365164379311cebee300dd2a.png?size=2048";
+                quote = "wat de hek";
+                year = "2017";
+                url = "https://www.example.com/"; //TODO: Find a URL
+                break;
+
         }
 
         QuoteOfTheDay.setAuthor(author, authorImage);
