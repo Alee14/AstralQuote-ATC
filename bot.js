@@ -42,7 +42,7 @@ function GetQuoteOfTheDay(quoteNum = -1) {
         var url;
 
         if (quoteNum == -1) {
-            quoteNum = Math.floor(Math.random() * 1000) % 33;
+            quoteNum = Math.floor(Math.random() * 1000) % 34;
         }
 
 
@@ -284,15 +284,15 @@ function GetQuoteOfTheDay(quoteNum = -1) {
                 year = "2017";
                 url = "https://www.example.com/"; //TODO: Find a URL
                 break;
-            case 34:
+            case 33:
                 author = "Victor Tran";
                 authorImage = "https://yt3.ggpht.com/-Iuf1v4-SSSM/AAAAAAAAAAI/AAAAAAAAAAA/89IYeQw--wU/photo.jpg";
                 quote = "(there is a :middle_finger: emoji sitting in Gboard now after my brother sent that to Google Assistant";
                 year = "2017";
                 url = "https://www.example.com/"; //TODO: Find a URL
                 break;
-                
-                
+
+
 
         }
 
