@@ -297,9 +297,13 @@ function GetQuoteOfTheDay(quoteNum = -1) {
                 year = "2017";
                 url = "https://www.example.com/"; //TODO: Find a URL
                 break;
-
-
-
+            case 35:
+                author = "AstralPhaser";
+                authorImage = "https://cdn.discordapp.com/avatars/230480971084988417/32f46a9671c6ceedc54b369ea73be178.png?size=2048";
+                quote = "anyway, I've gotta go now, I'll be back in 3 years";
+                year = "2017";
+                url = "https://www.example.com/"; //TODO: Find a URL
+                break;
         }
 
         QuoteOfTheDay.setAuthor(author, authorImage);
