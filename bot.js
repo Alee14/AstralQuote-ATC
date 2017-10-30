@@ -48,7 +48,7 @@ function GetQuoteOfTheDay(quoteNum = -1) {
         var url;
 
         if (quoteNum == -1) {
-            quoteNum = Math.floor(Math.random() * 1000) % 36;
+            quoteNum = Math.floor(Math.random() * 1000) % 39;
         }
 
 
@@ -303,6 +303,27 @@ function GetQuoteOfTheDay(quoteNum = -1) {
                 quote = "anyway, I've gotta go now, I'll be back in 3 years";
                 year = "2017";
                 url = "https://www.example.com/"; //TODO: Find a URL
+                break;
+            case 36:
+                author = "Victor Tran";
+                authorImage = "https://yt3.ggpht.com/-Iuf1v4-SSSM/AAAAAAAAAAI/AAAAAAAAAAA/89IYeQw--wU/photo.jpg";
+                quote = "Zero electric cars means they don't sell electric cards here";
+                year = "2017";
+                url = "https://www.example.com/"; //TODO: Find a URL
+                break;
+            case 37:
+                author = "Victor Tran";
+                authorImage = "https://yt3.ggpht.com/-Iuf1v4-SSSM/AAAAAAAAAAI/AAAAAAAAAAA/89IYeQw--wU/photo.jpg";
+                quote = "Unless you're living in like Denland or something";
+                year = "2017";
+                url = "https://www.example.com/"; //TODO: Find a URL
+                break;
+            case 38:
+                author = "Victor Tran";
+                authorImage = "https://yt3.ggpht.com/-Iuf1v4-SSSM/AAAAAAAAAAI/AAAAAAAAAAA/89IYeQw--wU/photo.jpg";
+                quote = "[goes and cries in a corner]\nWAAA\nWAAAAAAAAAA\nWAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+                year = "2017";
+                url = "https://cdn.discordapp.com/attachments/373884824034869249/374564169678061568/unknown.png";
                 break;
         }
 
