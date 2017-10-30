@@ -48,7 +48,7 @@ function GetQuoteOfTheDay(quoteNum = -1) {
         var url;
 
         if (quoteNum == -1) {
-            quoteNum = Math.floor(Math.random() * 1000) % 35;
+            quoteNum = Math.floor(Math.random() * 1000) % 36;
         }
 
 
