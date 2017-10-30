@@ -1,7 +1,13 @@
 const Discord = require('discord.js');
+const moment = require('moment');
 const client = new Discord.Client();
 const config = require('./config.json');
 const aqVersion = "1.0.1";
+const log = message => {
+
+    console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] ${message}`);
+
+};
 
 const SuggestQuoteStartMessage = "**Quote Suggestion**\n" +
     "Welcome to the quote suggestion process! Please read this before you continue.\n" +
@@ -27,8 +33,8 @@ function GetQuoteOfTheDay(quoteNum = -1) {
     var now = new Date();
 
     if (QuoteOfTheDayExpiry < now.getTime()) {
-        console.log("[!] Getting new quote of the day...");
-        console.log("[!] This quote expires in 1 day.");
+        log("[!] Getting new quote of the day...");
+        log("[!] This quote expires in 1 day.");
 
         QuoteOfTheDayStartTime = now;
         QuoteOfTheDayExpiry = now.getTime();
@@ -302,7 +308,7 @@ function GetQuoteOfTheDay(quoteNum = -1) {
         QuoteOfTheDay.setFooter("- " + year);
         QuoteOfTheDay.setURL(url);
     } else {
-        console.log("[!] No need for new quote of the day");
+        log("[!] No need for new quote of the day");
     }
 
 
@@ -310,7 +316,7 @@ function GetQuoteOfTheDay(quoteNum = -1) {
 }
 
 client.on('ready', () => {
-    console.log('[>] ARE YA READY KIDS? AYE AYE CAPTAIN!');
+    log('[>] ARE YA READY KIDS? AYE AYE CAPTAIN!');
     client.user.setPresence({
         game: {
             name: "for help: aq:help",
@@ -339,7 +345,7 @@ client.on('message', message => {
     } else if (message.content === 'aq:reboot') {
         /*
     message.channel.send("Goodbye! We'll be back in a moment!").then(messageDeleteTimer);
-    console.log('[?] Reboot Requested. Rebooting...');
+    log('[?] Reboot Requested. Rebooting...');
     client.destroy();
     DidReboot = true;
     client.login('MjgwMjQ1MDAwMDI0MDk2NzY4.C4K8Nw.InlnQvRmbvfJG0nv13FXtoVzXwc');
@@ -347,7 +353,7 @@ client.on('message', message => {
         message.channel.send("Good try... But we're not letting anyone reboot me yet!");
     } else if (message.content === 'aq:poweroff') {
         /*
-        console.log(message.guild.roles);
+        log(message.guild.roles);
         if (message.guild.roles.get('Moderator').members.keyArray().includes(message.author.username)) {
           message.channel.send("Access Granted");
         } else {
@@ -406,7 +412,7 @@ client.on('message', message => {
         }
 
         message.reply(":clock1: AstrelQuact has been up for " + timeString + " hours.");
-        console.log("[!] Someone just typed in the uptime command! Here's how long i've been up for: " + timeString + " hours.")
+        log("[!] Someone just typed in the uptime command! Here's how long i've been up for: " + timeString + " hours.")
     } else if (message.content === 'aq:invitebot') {
         var embed = new Discord.RichEmbed();
 
@@ -436,7 +442,7 @@ client.on('message', message => {
     } else if (message.content.startsWith("aq:")) {
         deleteOriginalMessage = false;
 
-        console.log("[X] " + message.content + " [Unrecognised command]");
+        log("[X] " + message.content + " [Unrecognised command]");
         var msg;
         switch (Math.floor(Math.random() * 1000) % 8) {
             case 0:
@@ -470,16 +476,16 @@ client.on('message', message => {
 
 
 client.on('guildCreate', guild => {
-    console.log(`[>] I just joined ${guild.name}. This server has ${guild.memberCount} members.`)
+    log(`[>] I just joined ${guild.name}. This server has ${guild.memberCount} members.`)
 
 });
 
 client.on('guildDelete', guild => {
-    console.log(`[>] I was removed from ${guild.name}.`)
+    log(`[>] I was removed from ${guild.name}.`)
 
 });
 
 client.login(config.token).catch(
     function() {
-        console.log("[X] Login failed.");
+        log("[X] Login failed.");
     });
