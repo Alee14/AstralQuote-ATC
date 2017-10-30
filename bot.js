@@ -284,7 +284,7 @@ function GetQuoteOfTheDay(quoteNum = -1) {
                 year = "2017";
                 url = "https://www.example.com/"; //TODO: Find a URL
                 break;
-            case 33:
+            case 34:
                 author = "Victor Tran";
                 authorImage = "https://yt3.ggpht.com/-Iuf1v4-SSSM/AAAAAAAAAAI/AAAAAAAAAAA/89IYeQw--wU/photo.jpg";
                 quote = "(there is a :middle_finger: emoji sitting in Gboard now after my brother sent that to Google Assistant";
