@@ -42,7 +42,7 @@ function GetQuoteOfTheDay(quoteNum = -1) {
         var url;
 
         if (quoteNum == -1) {
-            quoteNum = Math.floor(Math.random() * 1000) % 29;
+            quoteNum = Math.floor(Math.random() * 1000) % 30;
         }
 
 
@@ -246,6 +246,13 @@ function GetQuoteOfTheDay(quoteNum = -1) {
                 author = "Tembot";
                 authorImage = "https://cdn.discordapp.com/avatars/361202413165608962/f334f0c4365164379311cebee300dd2a.png?size=2048";
                 quote = "Why are u stocking me"
+                year = "2017"
+                url = "https://www.example.com/" //TODO: Find a URL
+                break;
+            case 29:
+                author = "TheMemeKnight";
+                authorImage = "https://cdn.discordapp.com/avatars/267766634452615168/df08523e0ca30929ceb0dc28dcda8f78.png?size=2048";
+                quote = "@Alee14  Do YoU kNoW hOw It FeElS tO bE iN mY sOcKs"
                 year = "2017"
                 url = "https://www.example.com/" //TODO: Find a URL
                 break;
