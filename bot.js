@@ -277,6 +277,22 @@ function GetQuoteOfTheDay(quoteNum = -1) {
                 year = "2017";
                 url = "https://www.example.com/"; //TODO: Find a URL
                 break;
+            case 33:
+                author = "PieLover12";
+                authorImage = "https://cdn.discordapp.com/avatars/344630031303311371/d84ae603ee53a5b54f7b78bcb4f733f2.png?size=2048";
+                quote = "DIE YOU LOOK LIKE TINY GIRL";
+                year = "2017";
+                url = "https://www.example.com/"; //TODO: Find a URL
+                break;
+            case 33:
+                author = "Victor Tran";
+                authorImage = "https://yt3.ggpht.com/-Iuf1v4-SSSM/AAAAAAAAAAI/AAAAAAAAAAA/89IYeQw--wU/photo.jpg";
+                quote = "(there is a :middle_finger: emoji sitting in Gboard now after my brother sent that to Google Assistant";
+                year = "2017";
+                url = "https://www.example.com/"; //TODO: Find a URL
+                break;
+                
+                
 
         }
 
