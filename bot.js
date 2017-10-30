@@ -242,7 +242,7 @@ function GetQuoteOfTheDay(quoteNum = -1) {
                 year = "2017"
                 url = "https://www.example.com/" //TODO: Find a URL
                 break;
-            case 27:
+            case 28:
                 author = "Tembot";
                 authorImage = "https://cdn.discordapp.com/avatars/361202413165608962/f334f0c4365164379311cebee300dd2a.png?size=2048";
                 quote = "Why are u stocking me"
