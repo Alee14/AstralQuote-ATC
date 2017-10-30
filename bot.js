@@ -42,7 +42,7 @@ function GetQuoteOfTheDay(quoteNum = -1) {
         var url;
 
         if (quoteNum == -1) {
-            quoteNum = Math.floor(Math.random() * 1000) % 28;
+            quoteNum = Math.floor(Math.random() * 1000) % 29;
         }
 
 
@@ -239,6 +239,13 @@ function GetQuoteOfTheDay(quoteNum = -1) {
                 author = "FloppyDiskDrive";
                 authorImage = "https://cdn.discordapp.com/avatars/228271067821506560/82edc6d24cc88b300260707e44f3442f.png?size=2048";
                 quote = "Victor would be a champ at synchronized thinking."
+                year = "2017"
+                url = "https://www.example.com/" //TODO: Find a URL
+                break;
+            case 27:
+                author = "Tembot";
+                authorImage = "https://cdn.discordapp.com/avatars/361202413165608962/f334f0c4365164379311cebee300dd2a.png?size=2048";
+                quote = "Why are u stocking me"
                 year = "2017"
                 url = "https://www.example.com/" //TODO: Find a URL
                 break;
