@@ -48,7 +48,7 @@ function GetQuoteOfTheDay(quoteNum = -1) {
         var url;
 
         if (quoteNum == -1) {
-            quoteNum = Math.floor(Math.random() * 1000) % 39;
+            quoteNum = Math.floor(Math.random() * 1000) % 40;
         }
 
 
@@ -181,9 +181,9 @@ function GetQuoteOfTheDay(quoteNum = -1) {
             case 18:
                 author = "Alee14";
                 authorImage = "https://cdn.discordapp.com/avatars/242775871059001344/dd7be36e859f206f9b6606855681280e.png?size=2048";
-                quote = "IS THERE A GOOOOOGALIE HERE!!!! (Go to 2:30 into the video)";
+                quote = "IS THERE A GOOOOOGALIE HERE!!!!";
                 year = "2014";
-                url = "https://youtu.be/Ap6fUlMx90A";
+                url = "https://youtu.be/Ap6fUlMx90A?t=2m30s";
                 break;
             case 19:
                 author = "143malliw";
@@ -324,6 +324,13 @@ function GetQuoteOfTheDay(quoteNum = -1) {
                 quote = "[goes and cries in a corner]\nWAAA\nWAAAAAAAAAA\nWAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
                 year = "2017";
                 url = "https://cdn.discordapp.com/attachments/373884824034869249/374564169678061568/unknown.png";
+                break;
+            case 39:
+                author = "OSFirstTimer";
+                authorImage = "https://yt3.ggpht.com/-tQLg1M-3org/AAAAAAAAAAI/AAAAAAAAAAA/-kkOvupMHXQ/s88-c-k-no-mo-rj-c0xffffff/photo.jpg";
+                quote = "The most popular version of Linux ever called Abuncho. Abuncho 12.10.";
+                year = "2012";
+                url = "https://youtu.be/PgGbZfR6Vec?t=6s";
                 break;
         }
 
