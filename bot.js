@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const moment = require('moment');
 const client = new Discord.Client();
 const config = require('./config.json');
-const aqVersion = "1.0.1";
+const aqVersion = "1.0.2";
 const log = message => {
 
     console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] ${message}`);
@@ -139,7 +139,7 @@ function GetQuoteOfTheDay(quoteNum = -1) {
                 break;
             case 12: //Special Case
                 QuoteOfTheDay.setAuthor("William Shakespeare", "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Shakespeare.jpg/468px-Shakespeare.jpg");
-                QuoteOfTheDay.setColor("#BF6FDB");
+                QuoteOfTheDay.setColor("#939d45");
                 QuoteOfTheDay.setURL("https://i.imgur.com/4KfdylP.jpg");
                 QuoteOfTheDay.setImage("https://i.imgur.com/4KfdylP.jpg");
                 return QuoteOfTheDay;
@@ -335,7 +335,7 @@ function GetQuoteOfTheDay(quoteNum = -1) {
         }
 
         QuoteOfTheDay.setAuthor(author, authorImage);
-        QuoteOfTheDay.setColor("#BF6FDB");
+        QuoteOfTheDay.setColor("#939d45");
         QuoteOfTheDay.setDescription(quote);
         QuoteOfTheDay.setFooter("- " + year);
         QuoteOfTheDay.setURL(url);
@@ -351,7 +351,7 @@ client.on('ready', () => {
     log('[>] ARE YA READY KIDS? AYE AYE CAPTAIN!');
     client.user.setPresence({
         game: {
-            name: "for help: aq:help",
+            name: "v." + aqVersion + " | aq:help",
             type: 0
         }
     });
@@ -398,8 +398,8 @@ client.on('message', message => {
         const embed = new Discord.RichEmbed()
             .setTitle("AstrelQuact Commands")
             .setDescription('Every command that you input in this bot you must use the following prefix `aq:`.')
-            .setThumbnail('https://cdn.discordapp.com/avatars/373224323529310208/10311b6f6bb439681480b0ced7efaf66.png?size=2048')
-            .setColor("#BF6FDB")
+            .setThumbnail('https://cdn.discordapp.com/avatars/373224323529310208/f42227477bc7e5b96ea848abc880a6bf.png?size=2048')
+            .setColor("#939d45")
             .addField("- General Commands", "ping\npong\ninvitebot\ncontribute\ninformation\nreboot\npoweroff", true)
             .addField("- Quote Commands", "quoteoftheday\nforcequote\nsuggestaquote", true)
             .setFooter("AstrelQuact Copyright 2017. This was made by TheRandomMelon and vicr123 and modified by Alee14.")
@@ -448,8 +448,8 @@ client.on('message', message => {
     } else if (message.content === 'aq:invitebot') {
         var embed = new Discord.RichEmbed();
 
-        embed.setAuthor("AstrelQuact", "https://cdn.discordapp.com/avatars/373224323529310208/10311b6f6bb439681480b0ced7efaf66.png?size=2048");
-        embed.setColor("#BF6FDB");
+        embed.setAuthor("AstrelQuact", "https://cdn.discordapp.com/avatars/373224323529310208/f42227477bc7e5b96ea848abc880a6bf.png?size=2048");
+        embed.setColor("#939d45");
         embed.setDescription("Ooh! I can see you want to invite me to a server! Here's the link: https://discordapp.com/oauth2/authorize?client_id=373224323529310208&scope=bot&permissions=314368");
         embed.setURL("https://discordapp.com/oauth2/authorize?client_id=373224323529310208&scope=bot&permissions=314368");
 
@@ -457,8 +457,8 @@ client.on('message', message => {
     } else if (message.content === "aq:suggestaquote") {
         var embed = new Discord.RichEmbed();
 
-        embed.setAuthor("AstrelQuact", "https://cdn.discordapp.com/avatars/373224323529310208/10311b6f6bb439681480b0ced7efaf66.png?size=2048");
-        embed.setColor("#BF6FDB");
+        embed.setAuthor("AstrelQuact", "https://cdn.discordapp.com/avatars/373224323529310208/f42227477bc7e5b96ea848abc880a6bf.png?size=2048");
+        embed.setColor("#939d45");
         embed.setDescription("This feature is coming soon!");
 
         message.channel.send(embed)
@@ -466,8 +466,8 @@ client.on('message', message => {
     } else if (message.content === "aq:information") {
         var embed = new Discord.RichEmbed();
 
-        embed.setAuthor("AstrelQuact", "https://cdn.discordapp.com/avatars/373224323529310208/10311b6f6bb439681480b0ced7efaf66.png?size=2048");
-        embed.setColor("#BF6FDB");
+        embed.setAuthor("AstrelQuact", "https://cdn.discordapp.com/avatars/373224323529310208/f42227477bc7e5b96ea848abc880a6bf.png?size=2048");
+        embed.setColor("#939d45");
         embed.setDescription("AstrelQuact Version: " + aqVersion + "\n");
 
         message.channel.send(embed)
