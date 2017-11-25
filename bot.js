@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const moment = require('moment');
 const client = new Discord.Client();
 const config = require('./config.json');
-const aqVersion = "1.0.2";
+const aqVersion = "1.1.0";
 const log = message => {
 
     console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] ${message}`);
@@ -400,9 +400,10 @@ client.on('message', message => {
             .setDescription('Every command that you input in this bot you must use the following prefix `aq:`.')
             .setThumbnail('https://cdn.discordapp.com/avatars/373224323529310208/f42227477bc7e5b96ea848abc880a6bf.png?size=2048')
             .setColor("#939d45")
-            .addField("- General Commands", "ping\npong\ninvitebot\ncontribute\ninformation\nreboot\npoweroff", true)
+            .addField("- General Commands", "ping\npong\ninvitebot\nreboot\npoweroff", true)
+            .addField("- Info Commands", "copyright\ncontribute\ninformation")
             .addField("- Quote Commands", "quoteoftheday\nforcequote\nsuggestaquote", true)
-            .setFooter("AstrelQuact Copyright 2017. This was made by TheRandomMelon and vicr123 and modified by Alee14.")
+            .setFooter("AstrelQuact Copyright 2017.")
         message.channel.send(embed);
     } else if (message.content === 'aq:oldhelp') {
         message.channel.send("Available commands:\n```\n" +
@@ -420,8 +421,6 @@ client.on('message', message => {
         message.channel.send("```cpp\n" +
             "Ha, you found an easter egg! Take that, !easteregg!" +
             "\n```");
-    } else if (message.content === 'aq:about') {
-        message.channel.send("Made in Node.js by TheRandomMelon and vicr123. Crafted for the AstrelTaser Cantral Discord server. And this was modified by Alee14.");
     } else if (message.content === 'aq:contribute') {
         message.reply("I can see you want to help AQ? Welp here's the link: https://github.com/FakeDiscordServersBots/AstralQuote");
     } else if (message.content === 'aq:uptime') {
@@ -446,6 +445,7 @@ client.on('message', message => {
         message.reply(":clock1: AstrelQuact has been up for " + timeString + " hours.");
         log("[!] Someone just typed in the uptime command! Here's how long i've been up for: " + timeString + " hours.")
     } else if (message.content === 'aq:invitebot') {
+        message.reply(":arrow_left: Continue in DMs.")
         var embed = new Discord.RichEmbed();
 
         embed.setAuthor("AstrelQuact", "https://cdn.discordapp.com/avatars/373224323529310208/f42227477bc7e5b96ea848abc880a6bf.png?size=2048");
@@ -453,8 +453,8 @@ client.on('message', message => {
         embed.setDescription("Ooh! I can see you want to invite me to a server! Here's the link: https://discordapp.com/oauth2/authorize?client_id=373224323529310208&scope=bot&permissions=314368");
         embed.setURL("https://discordapp.com/oauth2/authorize?client_id=373224323529310208&scope=bot&permissions=314368");
 
-        message.channel.send(embed)
-    } else if (message.content === "aq:suggestaquote") {
+        message.author.send(embed)
+   /* } else if (message.content === "aq:suggestaquote") {
         var embed = new Discord.RichEmbed();
 
         embed.setAuthor("AstrelQuact", "https://cdn.discordapp.com/avatars/373224323529310208/f42227477bc7e5b96ea848abc880a6bf.png?size=2048");
@@ -462,13 +462,13 @@ client.on('message', message => {
         embed.setDescription("This feature is coming soon!");
 
         message.channel.send(embed)
-        message.author.sendMessage(SuggestQuoteStartMessage);
+        message.author.sendMessage(SuggestQuoteStartMessage); */
     } else if (message.content === "aq:information") {
         var embed = new Discord.RichEmbed();
 
         embed.setAuthor("AstrelQuact", "https://cdn.discordapp.com/avatars/373224323529310208/f42227477bc7e5b96ea848abc880a6bf.png?size=2048");
         embed.setColor("#939d45");
-        embed.setDescription("AstrelQuact Version: " + aqVersion + "\n");
+        embed.setDescription("AstrelQuact Version: " + aqVersion + "\nThis was made by TheRandomMelon and vicr123 and modified by Alee14.");
 
         message.channel.send(embed)
     } else if (message.content.startsWith("aq:")) {
