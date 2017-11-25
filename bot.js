@@ -396,22 +396,22 @@ client.on('message', message => {
     } else if (message.content === 'aq:help') {
         // This is the new help
         const embed = new Discord.RichEmbed()
-            .setTitle("AstrelQuact Commands")
+            .setTitle("AstralQuote Commands")
             .setDescription('Every command that you input in this bot you must use the following prefix `aq:`.')
             .setThumbnail('https://cdn.discordapp.com/avatars/373224323529310208/f42227477bc7e5b96ea848abc880a6bf.png?size=2048')
             .setColor("#939d45")
             .addField("- General Commands", "ping\npong\ninvitebot\nreboot\npoweroff", true)
             .addField("- Info Commands", "copyright\ncontribute\ninformation")
             .addField("- Quote Commands", "quoteoftheday\nforcequote\nsuggestaquote", true)
-            .setFooter("AstrelQuact Copyright 2017.")
+            .setFooter("AstralQuote Copyright 2017.")
         message.channel.send(embed);
     } else if (message.content === 'aq:oldhelp') {
         message.channel.send("Available commands:\n```\n" +
-            "aq:ping, aq:pong     Requests AstrelQuact to reply with a message\n" +
-            "aq:quoteoftheday   Requests AstrelQuact for the quote of the day\n" +
-            "aq:forcequote      Requests AstrelQuact to reset the quote of the day\n" +
-            "aq:reboot          Requests AstrelQuact to reboot\n" +
-            "aq:poweroff        Tells AstrelQuact to leave\n```"
+            "aq:ping, aq:pong     Requests AstralQuote to reply with a message\n" +
+            "aq:quoteoftheday   Requests AstralQuote for the quote of the day\n" +
+            "aq:forcequote      Requests AstralQuote to reset the quote of the day\n" +
+            "aq:reboot          Requests AstralQuote to reboot\n" +
+            "aq:poweroff        Tells AstralQuote to leave\n```"
         );
     } else if (message.content === 'aq:easteregg') {
         message.channel.send("```cpp\n" +
@@ -422,7 +422,7 @@ client.on('message', message => {
             "Ha, you found an easter egg! Take that, !easteregg!" +
             "\n```");
     } else if (message.content === 'aq:contribute') {
-        message.reply("I can see you want to help AQ? Welp here's the link: https://github.com/FakeDiscordServersBots/AstralQuote");
+        message.reply("I can see you want to help AQ? Welp here's the link: https://github.com/ATC-Parody/AstralQuote");
     } else if (message.content === 'aq:uptime') {
         var timeString; // What we'll eventually put into the message
         var uptime = parseInt(client.uptime); // Get uptime in ms
@@ -442,13 +442,13 @@ client.on('message', message => {
             timeString = hours + ":" + uptimeMinutes // We don't need to add an extra 0.
         }
 
-        message.reply(":clock1: AstrelQuact has been up for " + timeString + " hours.");
+        message.reply(":clock1: AstralQuote has been up for " + timeString + " hours.");
         log("[!] Someone just typed in the uptime command! Here's how long i've been up for: " + timeString + " hours.")
     } else if (message.content === 'aq:invitebot') {
         message.reply(":arrow_left: Continue in DMs.")
         var embed = new Discord.RichEmbed();
 
-        embed.setAuthor("AstrelQuact", "https://cdn.discordapp.com/avatars/373224323529310208/f42227477bc7e5b96ea848abc880a6bf.png?size=2048");
+        embed.setAuthor("AstralQuote", "https://cdn.discordapp.com/avatars/373224323529310208/f42227477bc7e5b96ea848abc880a6bf.png?size=2048");
         embed.setColor("#939d45");
         embed.setDescription("Ooh! I can see you want to invite me to a server! Here's the link: https://discordapp.com/oauth2/authorize?client_id=373224323529310208&scope=bot&permissions=314368");
         embed.setURL("https://discordapp.com/oauth2/authorize?client_id=373224323529310208&scope=bot&permissions=314368");
@@ -457,7 +457,7 @@ client.on('message', message => {
    /* } else if (message.content === "aq:suggestaquote") {
         var embed = new Discord.RichEmbed();
 
-        embed.setAuthor("AstrelQuact", "https://cdn.discordapp.com/avatars/373224323529310208/f42227477bc7e5b96ea848abc880a6bf.png?size=2048");
+        embed.setAuthor("AstralQuote", "https://cdn.discordapp.com/avatars/373224323529310208/f42227477bc7e5b96ea848abc880a6bf.png?size=2048");
         embed.setColor("#939d45");
         embed.setDescription("This feature is coming soon!");
 
@@ -466,9 +466,9 @@ client.on('message', message => {
     } else if (message.content === "aq:information") {
         var embed = new Discord.RichEmbed();
 
-        embed.setAuthor("AstrelQuact", "https://cdn.discordapp.com/avatars/373224323529310208/f42227477bc7e5b96ea848abc880a6bf.png?size=2048");
+        embed.setAuthor("AstralQuote", "https://cdn.discordapp.com/avatars/373224323529310208/f42227477bc7e5b96ea848abc880a6bf.png?size=2048");
         embed.setColor("#939d45");
-        embed.setDescription("AstrelQuact Version: " + aqVersion + "\nThis was made by TheRandomMelon and vicr123 and modified by Alee14.");
+        embed.setDescription("AstralQuote Version: " + aqVersion + "\nThis was made by TheRandomMelon and vicr123 and modified by Alee14.");
 
         message.channel.send(embed)
     } else if (message.content.startsWith("aq:")) {
@@ -493,7 +493,7 @@ client.on('message', message => {
                 msg = "What are you trying to do!?";
                 break;
             case 5:
-                msg = "Is this the end of AstrelQuact?";
+                msg = "Is this the end of AstralQuote?";
                 break;
             case 6:
                 msg = "Not sure what you mean.";
