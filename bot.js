@@ -265,9 +265,9 @@ function GetQuoteOfTheDay(quoteNum = -1) {
             case 30:
                 author = "Alee14";
                 authorImage = "https://cdn.discordapp.com/avatars/242775871059001344/dd7be36e859f206f9b6606855681280e.png?size=2048";
-                quote = "By forcking it\nSpeaking of it\nI'm adding that as my new wuote :wink:\nOh\nanother one as well :wink:";
+                quote = "You could do me if you want to not show it to the public.";
                 year = "2017";
-                url = "https://www.example.com/"; //TODO: Find a URL
+                url = "https://prnt.sc/hfht4v";
                 break;
             case 31:
                 author = "Alee14";
@@ -357,12 +357,19 @@ client.on('ready', () => {
     });
 });
 
+function getBoshyTime(guild) {
+    if (guild.emojis.exists('name', 'vtBoshyTime')) {
+        return "<:vtBoshyTime:" + guild.emojis.find('name', 'vtBoshyTime').id + ">";
+    } else {
+        return ":warning:";
+    }
+}
 
 client.on('message', message => {
     if (message.content === 'aq:ping') {
-        message.channel.send('<:vtBoshyTime:280178631886635008> PONG! I want to play pong... :\'(');
+        message.channel.send(getBoshyTime(message.guild) + ' PONG! I want to play pong... :\'(');
     } else if (message.content === 'aq:pong') {
-        message.channel.send('<:vtBoshyTime:280178631886635008> PING!');
+        message.channel.send(getBoshyTime(message.guild) + ' PING!');
     } else if (message.content === 'aq:isthisthingon') {
         message.channel.send('no 💤');
     } else if (message.content === 'aq:quoteoftheday') {
@@ -502,7 +509,7 @@ client.on('message', message => {
                 msg = "Pretty sure you didn't expect this message to appear...";
                 break;
         }
-        message.channel.send("<:vtBoshyTime:280178631886635008> GAH! " + msg + " Refer to aq:help for syntax and other stuff.");
+        message.channel.send(getBoshyTime(message.guild) + " GAH! " + msg + " Refer to aq:help for syntax and other stuff.");
     }
 });
 
