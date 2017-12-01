@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const moment = require('moment');
 const client = new Discord.Client();
 const config = require('./config.json');
-const aqVersion = "1.1.0";
+const aqVersion = "1.1.1";
 const prefix = "aq:";
 const log = message => {
 
@@ -367,14 +367,12 @@ function getBoshyTime(guild) {
 }
 
 client.on('message', message => {
-    if (message.content == "kden") {
-        message.channel.send("live");
-    }
     if (message.content.indexOf(prefix) !== 0) return;
-    var msg = message.content;
 
-  const args = message.content.slice(prefix.length).trim().split(/ +/g);
-  const command = args.shift().toLowerCase();
+    const args = message.content.slice(prefix.length).trim().split(/ +/g);
+
+    const command = args.shift().toLowerCase();
+
     if (command === 'ping') {
         message.channel.send(getBoshyTime(message.guild) + ' PONG! I want to play pong... :\'(');
     } else if (command === 'pong') {
@@ -413,7 +411,7 @@ client.on('message', message => {
         // This is the new help
         const embed = new Discord.RichEmbed()
             .setTitle("AstralQuote Commands")
-            .setDescription('Every command that you input in this bot you must use the following prefix `aq:`.')
+            .setDescription('Every command that you input in this bot you must use the following prefix `'+ prefix +'`.')
             .setThumbnail('https://cdn.discordapp.com/avatars/373224323529310208/f42227477bc7e5b96ea848abc880a6bf.png?size=2048')
             .setColor("#939d45")
             .addField("- General Commands", "ping\npong\ninvitebot\nreboot\npoweroff", true)
@@ -424,10 +422,10 @@ client.on('message', message => {
     } else if (command === 'oldhelp') {
         message.channel.send("Available commands:\n```\n" +
             "aq:ping, aq:pong     Requests AstralQuote to reply with a message\n" +
-            "aq:quoteoftheday   Requests AstralQuote for the quote of the day\n" +
-            "aq:forcequote      Requests AstralQuote to reset the quote of the day\n" +
-            "aq:reboot          Requests AstralQuote to reboot\n" +
-            "aq:poweroff        Tells AstralQuote to leave\n```"
+            "aq:quoteoftheday     Requests AstralQuote for the quote of the day\n" +
+            "aq:forcequote        Requests AstralQuote to reset the quote of the day\n" +
+            "aq:reboot            Requests AstralQuote to reboot\n" +
+            "aq:poweroff          Tells AstralQuote to leave\n```"
         );
     } else if (command === 'easteregg') {
         message.channel.send("```cpp\n" +
@@ -520,6 +518,11 @@ client.on('message', message => {
         }
         message.channel.send(getBoshyTime(message.guild) + " GAH! " + msg + " Refer to aq:help for syntax and other stuff.");
     }
+
+    if (message.content == "kden") {
+        message.channel.send("live");
+    }
+
 });
 
 
