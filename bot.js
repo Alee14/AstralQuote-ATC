@@ -3,6 +3,7 @@ const moment = require('moment');
 const client = new Discord.Client();
 const config = require('./config.json');
 const aqVersion = "1.1.0";
+const prefix = "aq:";
 const log = message => {
 
     console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] ${message}`);
@@ -366,22 +367,27 @@ function getBoshyTime(guild) {
 }
 
 client.on('message', message => {
-    if (message.content === 'aq:ping') {
+    if (message.content.indexOf(prefix) !== 0) return;
+    var msg = message.content;
+
+  const args = message.content.slice(prefix.length).trim().split(/ +/g);
+  const command = args.shift().toLowerCase();
+    if (command === 'ping') {
         message.channel.send(getBoshyTime(message.guild) + ' PONG! I want to play pong... :\'(');
-    } else if (message.content === 'aq:pong') {
+    } else if (command === 'pong') {
         message.channel.send(getBoshyTime(message.guild) + ' PING!');
-    } else if (message.content === 'aq:isthisthingon') {
+    } else if (command === 'isthisthingon') {
         message.channel.send('no 💤');
-    } else if (message.content === 'aq:quoteoftheday') {
+    } else if (command === 'quoteoftheday') {
         var quoteofday = GetQuoteOfTheDay();
         message.channel.send("Here's the quote of the day (as of " + QuoteOfTheDayStartTime.toUTCString() + ")");
         message.channel.sendEmbed(quoteofday);
-    } else if (message.content === "aq:forcequote") {
+    } else if (command === "forcequote") {
         QuoteOfTheDayExpiry = 0;
         var quoteofday = GetQuoteOfTheDay();
         message.channel.send("New quote of the day!");
         message.channel.sendEmbed(quoteofday);
-    } else if (message.content === 'aq:reboot') {
+    } else if (command === 'reboot') {
         /*
     message.channel.send("Goodbye! We'll be back in a moment!").then(messageDeleteTimer);
     log('[?] Reboot Requested. Rebooting...');
@@ -390,7 +396,7 @@ client.on('message', message => {
     client.login('MjgwMjQ1MDAwMDI0MDk2NzY4.C4K8Nw.InlnQvRmbvfJG0nv13FXtoVzXwc');
 */
         message.channel.send("Good try... But we're not letting anyone reboot me yet!");
-    } else if (message.content === 'aq:poweroff') {
+    } else if (command === 'poweroff') {
         /*
         log(message.guild.roles);
         if (message.guild.roles.get('Moderator').members.keyArray().includes(message.author.username)) {
@@ -400,7 +406,7 @@ client.on('message', message => {
         }*/
 
         message.channel.send("Well... vicr123 tried to code this... but it kept crashing... Ironic isn't it? :(");
-    } else if (message.content === 'aq:help') {
+    } else if (command === 'help') {
         // This is the new help
         const embed = new Discord.RichEmbed()
             .setTitle("AstralQuote Commands")
@@ -412,7 +418,7 @@ client.on('message', message => {
             .addField("- Quote Commands", "quoteoftheday\nforcequote\nsuggestaquote", true)
             .setFooter("AstralQuote Copyright 2017.")
         message.channel.send(embed);
-    } else if (message.content === 'aq:oldhelp') {
+    } else if (command === 'oldhelp') {
         message.channel.send("Available commands:\n```\n" +
             "aq:ping, aq:pong     Requests AstralQuote to reply with a message\n" +
             "aq:quoteoftheday   Requests AstralQuote for the quote of the day\n" +
@@ -420,17 +426,17 @@ client.on('message', message => {
             "aq:reboot          Requests AstralQuote to reboot\n" +
             "aq:poweroff        Tells AstralQuote to leave\n```"
         );
-    } else if (message.content === 'aq:easteregg') {
+    } else if (command === 'easteregg') {
         message.channel.send("```cpp\n" +
             "There are no easter eggs to be found here. Begone!" +
             "\n```");
-    } else if (message.content === 'aq:easterwgg') {
+    } else if (command === 'easterwgg') {
         message.channel.send("```cpp\n" +
             "Ha, you found an easter egg! Take that, !easteregg!" +
             "\n```");
-    } else if (message.content === 'aq:contribute') {
+    } else if (command === 'contribute') {
         message.reply("I can see you want to help AQ? Welp here's the link: https://github.com/ATC-Parody/AstralQuote");
-    } else if (message.content === 'aq:uptime') {
+    } else if (command === 'uptime') {
         var timeString; // What we'll eventually put into the message
         var uptime = parseInt(client.uptime); // Get uptime in ms
         uptime = Math.floor(uptime / 1000); // Convert from ms to s
@@ -451,7 +457,7 @@ client.on('message', message => {
 
         message.reply(":clock1: AstralQuote has been up for " + timeString + " hours.");
         log("[!] Someone just typed in the uptime command! Here's how long i've been up for: " + timeString + " hours.")
-    } else if (message.content === 'aq:invitebot') {
+    } else if (command === 'invitebot') {
         message.reply(":arrow_left: Continue in DMs.")
         var embed = new Discord.RichEmbed();
 
@@ -461,7 +467,7 @@ client.on('message', message => {
         embed.setURL("https://discordapp.com/oauth2/authorize?client_id=373224323529310208&scope=bot&permissions=314368");
 
         message.author.send(embed)
-   /* } else if (message.content === "aq:suggestaquote") {
+   /* } else if (command === "suggestaquote") {
         var embed = new Discord.RichEmbed();
 
         embed.setAuthor("AstralQuote", "https://cdn.discordapp.com/avatars/373224323529310208/f42227477bc7e5b96ea848abc880a6bf.png?size=2048");
@@ -470,7 +476,7 @@ client.on('message', message => {
 
         message.channel.send(embed)
         message.author.sendMessage(SuggestQuoteStartMessage); */
-    } else if (message.content === "aq:information") {
+    } else if (command === "information") {
         var embed = new Discord.RichEmbed();
 
         embed.setAuthor("AstralQuote", "https://cdn.discordapp.com/avatars/373224323529310208/f42227477bc7e5b96ea848abc880a6bf.png?size=2048");
