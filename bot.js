@@ -415,7 +415,7 @@ client.on('message', message => {
             .setColor("#939d45")
             .addField("- General Commands", "ping\npong\ninvitebot\nreboot\npoweroff", true)
             .addField("- Info Commands", "copyright\ncontribute\ninformation")
-            .addField("- Quote Commands", "quoteoftheday\nforcequote\nsuggestaquote", true)
+            .addField("- Quote Commands", "quoteoftheday\nforcequote", true)
             .setFooter("AstralQuote Copyright 2017.")
         message.channel.send(embed);
     } else if (command === 'oldhelp') {
