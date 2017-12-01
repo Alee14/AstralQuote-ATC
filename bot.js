@@ -367,6 +367,9 @@ function getBoshyTime(guild) {
 }
 
 client.on('message', message => {
+    if (message.content == "kden") {
+        message.channel.send("live");
+    }
     if (message.content.indexOf(prefix) !== 0) return;
     var msg = message.content;
 
