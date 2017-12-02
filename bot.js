@@ -519,10 +519,6 @@ client.on('message', message => {
         message.channel.send(getBoshyTime(message.guild) + " GAH! " + msg + " Refer to aq:help for syntax and other stuff.");
     }
 
-    if (message.content == "kden") {
-        message.channel.send("live");
-    }
-
 });
 
 
