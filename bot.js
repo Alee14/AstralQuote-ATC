@@ -373,7 +373,7 @@ client.on('message', message => {
 
     const command = args.shift().toLowerCase();
 
-    if (msg.toLowerCase().includes("kden")) {
+    if (message.content.toLowerCase().includes("kden")) {
         message.channel.send("live");
     }
 
