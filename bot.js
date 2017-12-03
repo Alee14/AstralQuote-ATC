@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const moment = require('moment');
 const client = new Discord.Client();
 const config = require('./config.json');
-const aqVersion = "1.1.1";
+const aqVersion = "1.1.2";
 const prefix = "aq:";
 const log = message => {
 
@@ -25,6 +25,7 @@ const SuggestQuoteStartMessage = "**Quote Suggestion**\n" +
     "- New bots.\n\n" +
     "Wait 30 seconds, and then respond with `y` if you understood the above.\n" +
     "Please note this feature doesn't work **yet**"
+    
 var QuoteOfTheDay;
 var QuoteOfTheDayExpiry = 0;
 var QuoteOfTheDayStartTime;
@@ -352,7 +353,7 @@ client.on('ready', () => {
     log('[>] ARE YA READY KIDS? AYE AYE CAPTAIN!');
     client.user.setPresence({
         game: {
-            name: "v." + aqVersion + " | aq:help",
+            name: "v." + aqVersion + " | "+ prefix +"help",
             type: 0
         }
     });
@@ -441,7 +442,7 @@ client.on('message', message => {
             "Ha, you found an easter egg! Take that, aq:easteregg!" +
             "\n```");
     } else if (command === 'contribute') {
-        message.reply("I can see you want to help AQ? Welp here's the link: https://github.com/ATC-Parody/AstralQuote");
+        message.author.send("I can see you want to help AQ? Welp here's the link: https://github.com/ATC-Parody/AstralQuote");
     } else if (command === 'uptime') {
         var timeString; // What we'll eventually put into the message
         var uptime = parseInt(client.uptime); // Get uptime in ms
@@ -487,10 +488,11 @@ client.on('message', message => {
 
         embed.setAuthor("AstralQuote", "https://cdn.discordapp.com/avatars/373224323529310208/f42227477bc7e5b96ea848abc880a6bf.png?size=2048");
         embed.setColor("#939d45");
-        embed.setDescription("AstralQuote Version: " + aqVersion + "\nThis was made by TheRandomMelon and vicr123 and modified by Alee14.");
+        embed.setDescription("AstralQuote Version: " + aqVersion);
+        embed.setFooter("This was made by TheRandomMelon and vicr123 and modified by Alee14.");
 
         message.channel.send(embed)
-    } else if (message.content.startsWith("aq:")) {
+    } else if (message.content.startsWith(prefix)) {
         deleteOriginalMessage = false;
 
         log("[X] " + message.content + " [Unrecognised command]");
@@ -521,9 +523,8 @@ client.on('message', message => {
                 msg = "Pretty sure you didn't expect this message to appear...";
                 break;
         }
-        message.channel.send(getBoshyTime(message.guild) + " GAH! " + msg + " Refer to aq:help for syntax and other stuff.");
+        message.channel.send(getBoshyTime(message.guild) + " GAH! " + msg + " Refer to "+ prefix +"help for syntax and other stuff.");
     }
-
 });
 
 
