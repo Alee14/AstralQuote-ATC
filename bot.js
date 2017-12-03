@@ -4,6 +4,7 @@ const client = new Discord.Client();
 const config = require('./config.json');
 const aqVersion = "1.1.2";
 const prefix = "aq:";
+
 const log = message => {
 
     console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] ${message}`);
@@ -25,7 +26,7 @@ const SuggestQuoteStartMessage = "**Quote Suggestion**\n" +
     "- New bots.\n\n" +
     "Wait 30 seconds, and then respond with `y` if you understood the above.\n" +
     "Please note this feature doesn't work **yet**"
-    
+
 var QuoteOfTheDay;
 var QuoteOfTheDayExpiry = 0;
 var QuoteOfTheDayStartTime;
@@ -442,6 +443,7 @@ client.on('message', message => {
             "Ha, you found an easter egg! Take that, aq:easteregg!" +
             "\n```");
     } else if (command === 'contribute') {
+        message.reply(':arrow_left: Continue in DMs.')
         message.author.send("I can see you want to help AQ? Welp here's the link: https://github.com/ATC-Parody/AstralQuote");
     } else if (command === 'uptime') {
         var timeString; // What we'll eventually put into the message
