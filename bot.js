@@ -398,15 +398,20 @@ client.on('message', message => {
 */
         message.channel.send("Good try... But we're not letting anyone reboot me yet!");
     } else if (command === 'poweroff') {
-        /*
+        /* Heh really Victor :P
         log(message.guild.roles);
         if (message.guild.roles.get('Moderator').members.keyArray().includes(message.author.username)) {
           message.channel.send("Access Granted");
         } else {
           message.channel.send("Access Denied");
         }*/
-
-        message.channel.send("Well... vicr123 tried to code this... but it kept crashing... Ironic isn't it? :(");
+        if (message.author.id !== config.ownerID) 
+        message.reply('Heh you can\'t turn me off :P')
+        else {
+        console.log('[i] AstralQuote is now powering off...')
+        process.exit(0)
+        }
+        
     } else if (command === 'help') {
         // This is the new help
         const embed = new Discord.RichEmbed()
@@ -433,7 +438,7 @@ client.on('message', message => {
             "\n```");
     } else if (command === 'easterwgg') {
         message.channel.send("```cpp\n" +
-            "Ha, you found an easter egg! Take that, !easteregg!" +
+            "Ha, you found an easter egg! Take that, aq:easteregg!" +
             "\n```");
     } else if (command === 'contribute') {
         message.reply("I can see you want to help AQ? Welp here's the link: https://github.com/ATC-Parody/AstralQuote");
