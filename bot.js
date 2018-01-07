@@ -3,7 +3,7 @@ const moment = require('moment');
 const client = new Discord.Client();
 const config = require('./config.json');
 const aqVersion = "1.1.3";
-const prefix = "aqb:";
+const prefix = "aq:";
 
 const log = message => {
 
