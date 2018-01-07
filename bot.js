@@ -2,8 +2,8 @@ const Discord = require('discord.js');
 const moment = require('moment');
 const client = new Discord.Client();
 const config = require('./config.json');
-const aqVersion = "1.1.2";
-const prefix = "aq:";
+const aqVersion = "1.1.3";
+const prefix = "aqb:";
 
 const log = message => {
 
@@ -51,7 +51,7 @@ function GetQuoteOfTheDay(quoteNum = -1) {
         var url;
 
         if (quoteNum == -1) {
-            quoteNum = Math.floor(Math.random() * 1000) % 40;
+            quoteNum = Math.floor(Math.random() * 1000) % 41;
         }
 
 
@@ -182,8 +182,8 @@ function GetQuoteOfTheDay(quoteNum = -1) {
                 url = "https://www.example.com"; // TODO: Find a URL
                 break;
             case 18:
-                author = "Alee14";
-                authorImage = "https://cdn.discordapp.com/avatars/242775871059001344/dd7be36e859f206f9b6606855681280e.png?size=2048";
+                author = "Alee";
+                authorImage = "https://cdn.discordapp.com/avatars/242775871059001344/b8a995d836bbb8529ae35dc12c2289de.png?size=2048";
                 quote = "IS THERE A GOOOOOGALIE HERE!!!!";
                 year = "2014";
                 url = "https://youtu.be/Ap6fUlMx90A?t=2m30s";
@@ -239,21 +239,21 @@ function GetQuoteOfTheDay(quoteNum = -1) {
                 break;
             case 26:
                 author = "arencllc";
-                authorImage = "https://cdn.discordapp.com/avatars/191290329985581069/faf1a210c222d18fb30fcd9ec1082e7f.png?size=2048";
+                authorImage = "https://cdn.discordapp.com/avatars/191290329985581069/e4d6ee5c8836f5c79c51611d0ba536eb.png?size=2048";
                 quote = "Coding for uwp is as hard as using a UWP program.";
                 year = "2017";
                 url = "https://www.example.com/"; //TODO: Find a URL
                 break;
             case 27:
                 author = "FloppyDiskDrive";
-                authorImage = "https://cdn.discordapp.com/avatars/228271067821506560/82edc6d24cc88b300260707e44f3442f.png?size=2048";
+                authorImage = "https://cdn.discordapp.com/avatars/228271067821506560/a_0122b441972a6edfa6201ee871fad2a7.gif?size=2048";
                 quote = "Victor would be a champ at synchronized thinking.";
                 year = "2017"
                 url = "https://www.example.com/"; //TODO: Find a URL
                 break;
             case 28:
                 author = "Tembot";
-                authorImage = "https://cdn.discordapp.com/avatars/361202413165608962/f334f0c4365164379311cebee300dd2a.png?size=2048";
+                authorImage = "https://cdn.discordapp.com/avatars/361202413165608962/fba99664eb0aeec8a47db3a74a2029d5.png?size=2048";
                 quote = "Why are u stocking me";
                 year = "2017";
                 url = "https://www.example.com/"; //TODO: Find a URL
@@ -266,22 +266,22 @@ function GetQuoteOfTheDay(quoteNum = -1) {
                 url = "https://www.example.com/"; //TODO: Find a URL
                 break;
             case 30:
-                author = "Alee14";
-                authorImage = "https://cdn.discordapp.com/avatars/242775871059001344/dd7be36e859f206f9b6606855681280e.png?size=2048";
+                author = "Alee";
+                authorImage = "https://cdn.discordapp.com/avatars/242775871059001344/b8a995d836bbb8529ae35dc12c2289de.png?size=2048";
                 quote = "You could do me if you want to not show it to the public.";
                 year = "2017";
                 url = "https://prnt.sc/hfht4v";
                 break;
             case 31:
-                author = "Alee14";
-                authorImage = "https://cdn.discordapp.com/avatars/242775871059001344/dd7be36e859f206f9b6606855681280e.png?size=2048"
+                author = "Alee";
+                authorImage = "https://cdn.discordapp.com/avatars/242775871059001344/b8a995d836bbb8529ae35dc12c2289de.png?size=2048"
                 quote = "I want to live in a bus when i'm older";
                 year = "2017";
                 url = "https://www.example.com/" //TODO: Find a URL
                 break;
             case 32:
                 author = "Tembot";
-                authorImage = "https://cdn.discordapp.com/avatars/361202413165608962/f334f0c4365164379311cebee300dd2a.png?size=2048";
+                authorImage = "https://cdn.discordapp.com/avatars/361202413165608962/fba99664eb0aeec8a47db3a74a2029d5.png?size=2048";
                 quote = "wat de hek";
                 year = "2017";
                 url = "https://www.example.com/"; //TODO: Find a URL
@@ -335,6 +335,12 @@ function GetQuoteOfTheDay(quoteNum = -1) {
                 year = "2012";
                 url = "https://youtu.be/PgGbZfR6Vec?t=6s";
                 break;
+            case 40:
+                author = "Vat19";
+                authorImage = "https://s3.amazonaws.com/images1.vat19.com/branding/vat19-mobile-logo-2x.png"
+                quote = "VAAAAT NINETEEEEEEN! dot com ._.";
+                year = "2017"
+                url = "https://youtu.be/tnvcxBns_uQ?t=3m17s";
         }
 
         QuoteOfTheDay.setAuthor(author, authorImage);
@@ -410,6 +416,7 @@ client.on('message', message => {
         if (message.author.id !== config.ownerID) 
         message.reply('Heh you can\'t turn me off :P')
         else {
+        message.reply(getBoshyTime(message.guild) + "AstralQuote is now powering off!")
         console.log('[i] AstralQuote is now powering off...')
         process.exit(0)
         }
@@ -491,7 +498,7 @@ client.on('message', message => {
         embed.setAuthor("AstralQuote", "https://cdn.discordapp.com/avatars/373224323529310208/f42227477bc7e5b96ea848abc880a6bf.png?size=2048");
         embed.setColor("#939d45");
         embed.setDescription("AstralQuote Version: " + aqVersion);
-        embed.setFooter("This was made by TheRandomMelon and vicr123 and modified by Alee14.");
+        embed.setFooter("This was made by TheRandomMelon and vicr123 and modified by Alee.");
 
         message.channel.send(embed)
     } else if (message.content.startsWith(prefix)) {
