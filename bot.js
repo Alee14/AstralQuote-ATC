@@ -501,7 +501,8 @@ client.on('message', message => {
         embed.setFooter("This was made by TheRandomMelon and vicr123 and modified by Alee.");
 
         message.channel.send(embed)
-    } else if (message.content.startsWith(prefix)) {
+    }
+   /* } else if (message.content.startsWith(prefix)) {
         deleteOriginalMessage = false;
 
         log("[X] " + message.content + " [Unrecognised command]");
@@ -533,7 +534,7 @@ client.on('message', message => {
                 break;
         }
         message.channel.send(getBoshyTime(message.guild) + " GAH! " + msg + " Refer to "+ prefix +"help for syntax and other stuff.");
-    }
+    } */
 });
 
 
