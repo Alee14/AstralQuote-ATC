@@ -400,6 +400,7 @@ client.on('message', message => {
         message.channel.send("Here's the quote of the day (as of " + QuoteOfTheDayStartTime.toUTCString() + ")");
         message.channel.sendEmbed(quoteofday);
     } else if (command === "forcequote") {
+        message.delete();
         QuoteOfTheDayExpiry = 0;
         var quoteofday = GetQuoteOfTheDay();
         message.channel.send("New quote of the day!");
