@@ -51,7 +51,7 @@ function GetQuoteOfTheDay(quoteNum = -1) {
         var url;
 
         if (quoteNum == -1) {
-            quoteNum = Math.floor(Math.random() * 1000) % 41;
+            quoteNum = Math.floor(Math.random() * 1000) % 42;
         }
 
 
@@ -341,6 +341,13 @@ function GetQuoteOfTheDay(quoteNum = -1) {
                 quote = "VAAAAT NINETEEEEEEN! dot com ._.";
                 year = "2017"
                 url = "https://youtu.be/tnvcxBns_uQ?t=3m17s";
+                break;
+            case 41:
+                author = "Victor Tran";
+                authorImage = "";
+                quote = "Who needs to say fuck when you can say - instead\nI blame that on my secretary :sob:";
+                url = "https://www.example.com/"; //TODO: Find a URL
+                break;
         }
 
         QuoteOfTheDay.setAuthor(author, authorImage);
