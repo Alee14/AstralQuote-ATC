@@ -344,7 +344,7 @@ function GetQuoteOfTheDay(quoteNum = -1) {
                 break;
             case 41:
                 author = "Victor Tran";
-                authorImage = "";
+                authorImage = "https://yt3.ggpht.com/-Iuf1v4-SSSM/AAAAAAAAAAI/AAAAAAAAAAA/89IYeQw--wU/photo.jpg";
                 quote = "Who needs to say fuck when you can say - instead\nI blame that on my secretary :sob:";
                 year = "2018";
                 url = "https://www.example.com/"; //TODO: Find a URL
@@ -410,7 +410,7 @@ client.on('message', message => {
     log('[?] Reboot Requested. Rebooting...');
     client.destroy();
     DidReboot = true;
-    client.login('MjgwMjQ1MDAwMDI0MDk2NzY4.C4K8Nw.InlnQvRmbvfJG0nv13FXtoVzXwc');
+    client.login(nope);
 */
         message.channel.send("Good try... But we're not letting anyone reboot me yet!");
     } else if (command === 'poweroff') {
