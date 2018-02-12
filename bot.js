@@ -346,6 +346,7 @@ function GetQuoteOfTheDay(quoteNum = -1) {
                 author = "Victor Tran";
                 authorImage = "";
                 quote = "Who needs to say fuck when you can say - instead\nI blame that on my secretary :sob:";
+                year = "2018";
                 url = "https://www.example.com/"; //TODO: Find a URL
                 break;
         }
