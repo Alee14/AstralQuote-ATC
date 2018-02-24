@@ -51,7 +51,7 @@ function GetQuoteOfTheDay(quoteNum = -1) {
         var url;
 
         if (quoteNum == -1) {
-            quoteNum = Math.floor(Math.random() * 1000) % 41;
+            quoteNum = Math.floor(Math.random() * 1000) % 42;
         }
 
 
@@ -341,6 +341,14 @@ function GetQuoteOfTheDay(quoteNum = -1) {
                 quote = "VAAAAT NINETEEEEEEN! dot com ._.";
                 year = "2017"
                 url = "https://youtu.be/tnvcxBns_uQ?t=3m17s";
+                break;
+            case 41:
+                author = "Victor Tran";
+                authorImage = "https://yt3.ggpht.com/-Iuf1v4-SSSM/AAAAAAAAAAI/AAAAAAAAAAA/89IYeQw--wU/photo.jpg";
+                quote = "Who needs to say fuck when you can say - instead\nI blame that on my secretary :sob:";
+                year = "2018";
+                url = "https://www.example.com/"; //TODO: Find a URL
+                break;
         }
 
         QuoteOfTheDay.setAuthor(author, authorImage);
@@ -392,6 +400,7 @@ client.on('message', message => {
         message.channel.send("Here's the quote of the day (as of " + QuoteOfTheDayStartTime.toUTCString() + ")");
         message.channel.sendEmbed(quoteofday);
     } else if (command === "forcequote") {
+        message.delete();
         QuoteOfTheDayExpiry = 0;
         var quoteofday = GetQuoteOfTheDay();
         message.channel.send("New quote of the day!");
@@ -402,7 +411,7 @@ client.on('message', message => {
     log('[?] Reboot Requested. Rebooting...');
     client.destroy();
     DidReboot = true;
-    client.login('MjgwMjQ1MDAwMDI0MDk2NzY4.C4K8Nw.InlnQvRmbvfJG0nv13FXtoVzXwc');
+    client.login(nope);
 */
         message.channel.send("Good try... But we're not letting anyone reboot me yet!");
     } else if (command === 'poweroff') {
