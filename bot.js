@@ -501,12 +501,12 @@ client.on('message', message => {
         embed.setFooter("This was made by TheRandomMelon and vicr123 and modified by Alee.");
 
         message.channel.send(embed)
-    }
-   /* } else if (message.content.startsWith(prefix)) {
+    } else if (message.content.startsWith(prefix)) {
         deleteOriginalMessage = false;
 
         log("[X] " + message.content + " [Unrecognised command]");
-        var msg;
+    }
+  /*      var msg;
         switch (Math.floor(Math.random() * 1000) % 8) {
             case 0:
                 msg = "Trying to break me, are you?";
