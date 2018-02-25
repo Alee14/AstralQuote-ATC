@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const moment = require('moment');
 const client = new Discord.Client();
 const config = require('./config.json');
-const aqVersion = '1.2.2';
+const aqVersion = '1.2.3';
 const prefix = 'aq:';
 
 const log = message => {
@@ -128,13 +128,17 @@ client.on('message', message => {
         } else {
           message.channel.send("Access Denied");
         }*/
+        const asyncPowerOff = async () => {
+            await message.reply(getBoshyTime(message.guild) + 'AstralQuote is now powering off!');
+            console.log('[i] AstralQuote is now powering off...');
+            process.exit(0);
+        }
+
     if (message.author.id !== config.ownerID)
     {message.reply('Heh you can\'t turn me off :P');}
     else {
-      message.reply(getBoshyTime(message.guild) + 'AstralQuote is now powering off!');
-      console.log('[i] AstralQuote is now powering off...');
-      process.exit(0);
-    }
+        asyncPowerOff();
+    };
 
   } else if (command === 'help') {
     // This is the new help
