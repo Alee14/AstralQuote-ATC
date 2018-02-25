@@ -135,10 +135,10 @@ client.on('message', message => {
         }
 
     if (message.author.id !== config.ownerID)
-    {message.reply('Heh you can\'t turn me off :P');}
-    else {
-        asyncPowerOff();
-    };
+        {message.reply('Heh you can\'t turn me off :P');}
+            else {
+                 asyncPowerOff();
+            };
 
   } else if (command === 'help') {
     // This is the new help
