@@ -49,7 +49,7 @@ function GetQuoteOfTheDay(quoteNum = -1) {
     }
 
 
-    const quo = require('quotes.json').quotes[quoteNum];
+    const quo = require('./quotes.json').quotes[quoteNum];
     const author = quo.author;
     const authorImage = quo.authorImage;
     const quote = quo.quote;
