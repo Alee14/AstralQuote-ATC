@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const moment = require('moment');
 const client = new Discord.Client();
 const config = require('./config.json');
-const aqVersion = '1.2.0';
+const aqVersion = '1.2.1';
 const prefix = 'aq:';
 
 const log = message => {
@@ -44,12 +44,13 @@ function GetQuoteOfTheDay(quoteNum = -1) {
 
     QuoteOfTheDay = new Discord.RichEmbed();
 
+    let quo = require('./quotes.json').quotes
+
     if (quoteNum == -1) {
-      quoteNum = Math.floor(Math.random() * 1000) % 42;
+      quoteNum = Math.floor(Math.random() * 1000) % quo.length;
+      quo=quo[quoteNum];
     }
 
-
-    const quo = require('./quotes.json').quotes[quoteNum];
     const author = quo.author;
     const authorImage = quo.authorImage;
     const quote = quo.quote;
