@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const moment = require('moment');
 const client = new Discord.Client();
 const config = require('./config.json');
-const aqVersion = '1.2.1';
+const aqVersion = '1.2.2';
 const prefix = 'aq:';
 
 const log = message => {
@@ -101,7 +101,7 @@ client.on('message', message => {
     message.channel.send(getBoshyTime(message.guild) + ' PING!');
   } else if (command === 'isthisthingon') {
     message.channel.send('no 💤');
-  } else if (command === 'quoteoftheday') {
+  } else if (command === 'qotd') {
     const quoteofday = GetQuoteOfTheDay();
     message.channel.send('Here\'s the quote of the day (as of ' + QuoteOfTheDayStartTime.toUTCString() + ')');
     message.channel.sendEmbed(quoteofday);
@@ -145,7 +145,7 @@ client.on('message', message => {
       .setColor('#939d45')
       .addField('- General Commands', 'ping\npong\ninvitebot\nreboot\npoweroff', true)
       .addField('- Info Commands', 'copyright\ncontribute\ninformation')
-      .addField('- Quote Commands', 'quoteoftheday\nforcequote', true)
+      .addField('- Quote Commands', 'qotd\nforcequote', true)
       .setFooter('AstralQuote Copyright 2017.');
     message.channel.send(embed);
   } else if (command === 'oldhelp') {
