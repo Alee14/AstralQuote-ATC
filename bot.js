@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const moment = require('moment');
 const client = new Discord.Client();
 const config = require('./config.json');
-const aqVersion = '1.1.3';
+const aqVersion = '1.2.0';
 const prefix = 'aq:';
 
 const log = message => {
