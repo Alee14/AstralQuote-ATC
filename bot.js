@@ -71,7 +71,7 @@ function GetQuoteOfTheDay(quoteNum = -1) {
 }
 
 client.on('ready', () => {
-  log('[>] ARE YA READY KIDS? AYE AYE CAPTAIN!');
+  log('[>] AstralQuote is now ready using version '+ aqVersion +'!');
   client.user.setPresence({
     game: {
       name: 'v.' + aqVersion + ' | ' + prefix + 'help',
