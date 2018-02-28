@@ -265,6 +265,13 @@
       "quote" : "Who needs to say fuck when you can say - instead\nI blame that on my secretary :sob:",
       "year" : "2018",
       "url" : "https://www.example.com/"
+    },
+    {
+      "author" : "Steve Jobs",
+      "authorImage" : "http://media.syracuse.com/news/photo/2011/01/9177328-large.jpg",
+      "quote" : "Sometimes life is going to hit you in the head with a brick. Don't lose faith.",
+      "year" : "circa. 2000",
+      "url" : "https://www.example.com/"
     }
 
   ]
