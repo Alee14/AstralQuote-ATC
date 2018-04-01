@@ -144,7 +144,7 @@ client.on('message', message => {
     // This is the new help
     const embed = new Discord.RichEmbed()
       .setTitle('AstralQuote Commands')
-      .setDescription('Every command that you input in this bot you must use the following prefix `' + prefix + '`.\nNOTE: AstralQuote service will be shutdown in `April 10th 4PM EDT`.\n Thanks for using AstralQuote!')
+      .setDescription('Every command that you input in this bot you must use the following prefix `' + prefix + '`.\nNOTE: AstralQuote service will be shutdown in `April 2nd 4PM EDT`.\n Thanks for using AstralQuote!')
       .setThumbnail('https://cdn.discordapp.com/avatars/373224323529310208/f42227477bc7e5b96ea848abc880a6bf.png?size=2048')
       .setColor('#939d45')
       .addField('- General Commands', 'ping\npong\ninvitebot\nreboot\npoweroff', true)
